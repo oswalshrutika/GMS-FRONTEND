@@ -2,12 +2,12 @@
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { BellIcon, MenuIcon, XIcon, ShoppingBagIcon } from '@heroicons/react/outline'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Logout from './Logout';
 const navigation = [
-  { name: 'Home', to: 'home', current: true },
+  { name: 'Home', to: 'home', current: false },
   { name: 'Category', to: 'categorylist', current: false },
   { name: 'About Us', to: 'aboutus', current: false },
   { name: 'Contact Us', to: 'contactus', current: false },
@@ -28,13 +28,13 @@ const Navbar = (props) => {
   }
 
   const onLogin = () => {
-    history.push('/signin')
+    history.push('/signin-signup')
   }
 
   const cartItems = useSelector((state) => state.cartItems)
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-pink mb-5">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -79,8 +79,7 @@ const Navbar = (props) => {
                       </Link>
                     ))}
 
-                    {sessionStorage.getItem("isLoggedin") == 'true' &&
-                      <Link className="nav-link " to="/cart">Cart {cartItems.length}</Link>}
+
                   </div>
                 </div>
               </div>
@@ -88,14 +87,18 @@ const Navbar = (props) => {
               {sessionStorage.getItem("isLoggedin") == 'true' ? <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
 
-                <button
-                  type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-
+                {sessionStorage.getItem("isLoggedin") == 'true' &&
+                  <Link className="ml-4 flow-root lg:ml-6" to="/cart">
+                    <Link to="/cart" className="group -m-2 p-2 flex items-center">
+                      <ShoppingBagIcon
+                        className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartItems.length}</span>
+                      <span className="sr-only">items in cart, view bag</span>
+                    </Link>
+                  </Link>
+                }
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
@@ -152,9 +155,7 @@ const Navbar = (props) => {
                   </Transition>
                 </Menu>
 
-                <button onClick={onLogout} className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Logout
-                </button>
+
               </div> : <button onClick={onLogin} className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Login
               </button>}

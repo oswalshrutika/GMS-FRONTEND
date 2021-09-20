@@ -70,7 +70,7 @@ const payment = () => {
   };
 
 
-  return (<div><Navbar></Navbar>
+  return (<div>
     <div>
     <div className="app-content">
       <PDFExport ref={pdfExportComponent} paperSize="Tabloid">

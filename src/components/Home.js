@@ -22,62 +22,7 @@ function Home() {
       </div>
 
 
-      <header className="header">
-        <div className="navbar-area">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-12">
-                <nav className="navbar navbar-expand-lg">
-                  <a className="navbar-brand" href="#">
-                    <img src="assets/img/logo/logo.svg" alt="Logo" />
-                  </a>
-                  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="toggler-icon"></span>
-                    <span className="toggler-icon"></span>
-                    <span className="toggler-icon"></span>
-                  </button>
-                  <div className="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                    <ul id="nav" className="navbar-nav ml-auto">
-                      <li className="nav-item">
-                        <a className="page-scroll" href="#home">Home</a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="page-scroll" href="#services">Services</a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="page-scroll" href="#about">About</a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="page-scroll" href="#how">How It Works</a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="page-scroll" href="#testimonial">Testimonials</a>
-                      </li>
-                    </ul>
-
-                    <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                      <Link to="/signin-signup" className="whitespace-nowrap text-base font-medium text-gray hover:text-gray-900">
-                        Sign in
-                      </Link>
-                      <a
-                        href="#"
-                        className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-pink hover:bg-indigo-700"
-                      >
-                        Sign up
-                      </a>
-                    </div>
-                  </div>
-
-                </nav>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </header>
+     
 
 
       <section id="home" className="hero-section">

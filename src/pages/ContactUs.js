@@ -39,7 +39,7 @@ const history = useHistory()
     return (
         <div>
       
-        <Navbar/>
+ 
     
 <div class="about">
            
