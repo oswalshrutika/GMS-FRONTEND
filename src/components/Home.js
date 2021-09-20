@@ -1,3 +1,6 @@
+import CategoryList from "./Categorylist";
+import Search from "./Search";
+
 function Home() {
   return (
     <div className="App">
@@ -112,74 +115,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-lg-4 col-md-6">
-              <div className="single-service wow fadeInUp" data-wow-delay=".2s">
-                <div className="icon">
-                  <img src="assets/img/service/service-icon-1.svg" alt="" />
-                </div>
-                <div className="content">
-                  <h3>Food</h3>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="single-service wow fadeInUp" data-wow-delay=".4s">
-                <div className="icon">
-                  <img src="assets/img/service/service-icon-2.svg" alt="" />
-                </div>
-                <div className="content">
-                  <h3>Grocery</h3>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="single-service wow fadeInUp" data-wow-delay=".6s">
-                <div className="icon">
-                  <img src="assets/img/service/service-icon-3.svg" alt="" />
-                </div>
-                <div className="content">
-                  <h3>Furniture</h3>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="single-service wow fadeInUp" data-wow-delay=".2s">
-                <div className="icon">
-                  <img src="assets/img/service/service-icon-4.svg" alt="" />
-                </div>
-                <div className="content">
-                  <h3>Medicine</h3>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="single-service wow fadeInUp" data-wow-delay=".4s">
-                <div className="icon">
-                  <img src="assets/img/service/service-icon-5.svg" alt="" />
-                </div>
-                <div className="content">
-                  <h3>Electronics</h3>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="single-service wow fadeInUp" data-wow-delay=".6s">
-                <div className="icon">
-                  <img src="assets/img/service/service-icon-6.svg" alt="" />
-                </div>
-                <div className="content">
-                  <h3>Clothes</h3>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <CategoryList />
         </div>
       </section>
 
