@@ -1,10 +1,16 @@
+
+// tailwind.config.js
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'], darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+    theme: {
+        colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
+            pink: {
+                light: '#ff7ce5',
+                DEFAULT: '#e8505b',
+                dark: '#ff16d1',
+            },
+
+        }
+    }
 }

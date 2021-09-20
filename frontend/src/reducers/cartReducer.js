@@ -1,4 +1,5 @@
 const cartReducer = (state = [], action) => {
+
   switch (action.type) {
     case 'add-to-cart':
       return [...state, action.product]
