@@ -3,6 +3,7 @@ import Navbar from './NavBar';
 
 const Delivery = () => {
     const date = new Date(); 
+    console.log("🚀 ~ file: Delivery.js ~ line 6 ~ Delivery ~ date", date)
     const today = new Date(date);
 const tomorrow = new Date(today);
 //  const date = moment()

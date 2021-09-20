@@ -1,3 +1,6 @@
+const { default: AllCategory } = require("./AllCategory");
+const { default: CategoryList } = require("./Categorylist");
+
 function Home() {
   return (
     <div className="App">
@@ -112,7 +115,8 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="row">
+
+          {/* <div className="row">
             <div className="col-lg-4 col-md-6">
               <div className="single-service wow fadeInUp" data-wow-delay=".2s">
                 <div className="icon">
@@ -179,7 +183,10 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
+          <CategoryList />
+      
         </div>
       </section>
 
