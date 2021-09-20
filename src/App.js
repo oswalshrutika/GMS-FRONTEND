@@ -32,20 +32,22 @@ import Payment from './components/Payment';
 import Delivery from './components/Delivery';
 import Order from './components/Order';
 import AdminDashBoard from './components/AdminDashBoard';
+import Navbar from './components/NavBar';
 
 function App() {
   return (
     <div className="app">
+
       <div className="container-fluid">
         <BrowserRouter>
-         
-         
+
+          <Navbar />
           <Switch>
             {/* <Route path="/home" component={Home}></Route> */}
-            
+
             <Route path="/browse" component={Browse}></Route>
             <Route path="/signin-signup" component={Signin}></Route>
-            <Route path="/cart" component={Cart}></Route> 
+            <Route path="/cart" component={Cart}></Route>
             <Route path="/signup" component={SignUp}></Route>
             <Route path="/sellerSignup" component={SignUpSeller}></Route>
             <Route path="/sellerSignin" component={SellerSignIn}></Route>
@@ -64,7 +66,7 @@ function App() {
             <Route path="/sellerEditProfile" component={SellerEditProfile}></Route>
             <Route path="/sellerProfile" component={SellerProfile}></Route>
             <Route path="/home" component={Home}></Route>
-           
+
             <Route path="/categoryNavbar" component={CategoryNavbar}></Route>
             <Route path="/categoryList" component={CategoryList}></Route>
             <Route path="/contactus" component={ContactUs}></Route>
@@ -73,14 +75,14 @@ function App() {
             <Route path="/delivery" component={Delivery}></Route>
             <Route path="/order" component={Order}></Route>
             <Route path="/admin" >
-              <AdminDashBoard/>
-          
+              <AdminDashBoard />
+
             </Route>
             <Route path="/" component={Home}></Route>
-         
-             {/* <Redirect to="/" /> 
+
+            {/* <Redirect to="/" /> 
              */}
-           
+
 
           </Switch>
         </BrowserRouter>

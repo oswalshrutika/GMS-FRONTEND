@@ -35,11 +35,11 @@ const SignIn = () => {
         // }
 
         if (email.length === 0) {
-                        alert('Enter email')
-                    }
-                    else if (password.length === 0) {
-                        alert('enter password')
-                    }
+            alert('Enter email')
+        }
+        else if (password.length === 0) {
+            alert('enter password')
+        }
 
         else {
             const body = { email: email, password: password }
@@ -49,7 +49,7 @@ const SignIn = () => {
                 saveTokenInLocalStorage(result)
                 sessionStorage.setItem("isLoggedin", true)
                 history.push('/home')
-        })
+            })
             // }).catch(err => {
             //     setAuthErr(true)
             //     setAuthErrMsg("email or password is incorrect..")
@@ -59,70 +59,63 @@ const SignIn = () => {
     })
 
     return (
-        <div>
-            <Navbar />
 
-            <div className="signin">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="box">
+        <>
+            <section className="text-gray-600 body-font">
+                <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
+                    <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+                        <h1 className="title-font font-medium text-3xl text-orange-700">Welcome to the  GroceryManegement </h1>
+                        <p className="leading-relaxed mt-4">India's most convenient online grocery channel
+                            We offer you convenience of shopping everything that you need for your home - be it fresh fruits & vegetables, rice, dals, oil, packaged food, dairy item, frozen, pet food, household cleaning items & personal care products from a single virtual store. .
+                        </p>
+                    </div>
 
+                    <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
 
+                        <h2 className="text-gray-900 text-lg font-medium title-font mb-5">Sign In</h2>
 
-
-                                <h1>SignIn</h1>
-
-
-                                <label for="exampleInputEmail1" class="col-sm-2 control-label">Email</label>
-                                <input
-                                    onChange={(e) => {
-                                        setEmail(e.target.value)
-                                    }}
-                                    className="form-control" type="text" required style={{ width: "400px" }} />
-                                {emailErr && <p className="text-danger">{emailErrMsg}</p>}
-
-                                <br />
-                                <label for="exampleInputPassword1" class="col-sm-2 control-label">Password</label>
-                                <input
-                                    onChange={(e) => {
-                                        setPassword(e.target.value)
-                                    }}
-                                    className="form-control" type="text" type="password" required style={{ width: "400px" }} />
-                                {authErr && <p className="text-danger">{authErrMsg}</p>}
-
-                                <br />
-                                <button onClick={signIn} className="btn btn-success">SignIn</button>
-                                {'  '}
-                {'  '}
-                {/* <button className="btn btn-success">SignIn AS Seller</button><br/>  */}
-                <a href="/sellerSignin" className="btn btn-success">SignIn AS Seller</a>
-                                
-                                <br /> <Link className="nav-link" to="/signup">SignUp</Link>
-                                <Link to="/changepassword">Forgot Password ?</Link>
-
-                            </div>
-
-                        </div>          <div className="col-lg-7" >
-                            <img src={web1} alt="web" style={{ paddingLeft: "950px" }} />
-                            {/* <p className="text-center">
-                                    {' '}
-                                    <h2><i>STAY HOME AND SHOP ONLINE.</i></h2>
-                                    {' '}
-                                </p> */}
-                            <blockquote className="" style={{ paddingLeft: "150px" }}>
-                                
-                                {/* <footer className="blockquote-footer">
-                         <cite title="Source Title"></cite>
-                            </footer> */}
-                            </blockquote>
-
+                        <div className="relative mb-4">
+                            <label for="email" className="leading-7 text-sm text-gray-600">Email</label>
+                            <input
+                                onChange={(e) => {
+                                    setEmail(e.target.value)
+                                }}
+                                type="email"
+                                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                placeholder="test@test.com"
+                            />
                         </div>
-                          </div> 
-                             </div>  
-                               </div>  
-                                 </div>
+                        <div className="relative mb-4">
+                            <label for="password" className="leading-7 text-sm text-gray-600">Password</label>
 
+                            <input
+                                onChange={(e) => {
+                                    setPassword(e.target.value)
+                                }}
+                                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                type="password"
+                                placeholder="*****" />
+                        </div>
+                        <button onClick={signIn} className="text-white bg-pink border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                            Sign In As Customer
+                        </button>
+                        <p className="text-xs text-gray-500 mt-3">
+                            <Link to="/changepassword"> Forgot Password ?</Link>
+                        </p>
+                        <p className="text-xs text-gray-500 mt-3">
+                            If you are Seller <Link to="/sellerSignin">Sign In here</Link>
+                        </p>
+
+                        <p className="text-xs text-gray-500 mt-3">
+                            New User? <Link to="/signup">Signup here</Link>
+                        </p>
+
+
+                    </div>
+                </div>
+            </section>
+
+        </>
 
 
 
@@ -137,96 +130,66 @@ export default SignIn
 
 
 
+// <div>
+
+
+// <div className="signin">
+//     <div class="row">
+//         <div class="col-md-6">
+//             <div class="card">
+//                 <div class="box">
 
 
 
-// import { Link, useHistory } from 'react-router-dom'
-// import { useState } from "react"
-// import axios from 'axios';
-// import web1 from './gifs/couchgif.gif'
-// import Navbar from './NavBar';
-// import SellerSignIn from './SellerSignIn';
-// const SignIn =()=>{
-//     const [email, setEmail] = useState('')
-//     const [password, setPassword] = useState('')
-//     const[users ,setUsers]=useState([])
 
-//     const history = useHistory()
-//     const saveTokenInLocalStorage=(result)=>{
-//         localStorage.setItem('user',JSON.stringify(result))
-//       }
-//     const signIn = (() => {
-       
-//         if (email.length === 0) {
-//             alert('Enter email')
-//         }
-//         else if (password.length === 0) {
-//             alert('enter password')
-//         }
-//         else {
-//             const body = { email: email, password: password }
+//                     <h1>SignIn</h1>
 
-//             axios.post( `http://localhost:8080/user/authenticate`, body).then(response => {
-//                 const result = response.data
-//                 if (result) {
-//                     alert('User successfully logged in')
-//                    saveTokenInLocalStorage(result)
-//                    sessionStorage.setItem("isLoggedin", true)
-//                     if(result.role=='CUSTOMER')
-//                             history.push('/home')
-//                 }                 
-//                 else {
-//                     alert('Error while user login')
-//                 }
-//             })
-//         }
-//     })
 
-//     return (
-//         <div>
-//             <Navbar/>
-//         <div className="container">
-//            <div className="row">
-//            <div className="customer_border col-lg-5 col-sm-12 border-end border-4 p-5">
-//             <h1>SignIn</h1>
-          
+//                     <label for="exampleInputEmail1" class="col-sm-2 control-label">Email</label>
+//                     <input
+//                         onChange={(e) => {
+//                             setEmail(e.target.value)
+//                         }}
+//                         className="form-control" type="text" required style={{ width: "400px" }} />
+//                     {emailErr && <p className="text-danger">{emailErrMsg}</p>}
 
-//             <label for="exampleInputEmail1" class="col-sm-2 control-label">Email</label>
-//             <input
-//                 onChange={(e) => {
-//                     setEmail(e.target.value)
-//                 }}
-//                 className="form-control" type="text" required style={{ width: "400px" }} />
-//                 <br/>
-//             <label for="exampleInputPassword1" class="col-sm-2 control-label">Password</label>
-//             <input
-//                 onChange={(e) => {
-//                     setPassword(e.target.value)
-//                 }}
-//                 className="form-control" type="text" type="password" required style={{ width: "400px" }}/>
-//                 <br/>
-//                 <button onClick={signIn}className="btn btn-success">SignIn</button> {'  '}
-//                 {'  '}
-//                 {/* <button className="btn btn-success">SignIn AS Seller</button><br/>  */}
-//                 <a href="/sellerSignin" className="btn btn-success">SignIn AS Seller</a>
-//                 <Link className="nav-link" to="/signup">SignUp</Link>
-//         </div>
-//         <div className="col-lg-7" >
-//                         <img src={web1} alt="web" style={{ paddingLeft: "100px" }}/>
-//                         <blockquote className="blockquote mb-0" style={{ paddingLeft: "100px" }}>
-//                             <p className="text-center">
-//                                 {' '}
-//                                <h2><i>STAY HOME AND SHOP ONLINE.</i></h2> 
-//                                 {' '}
-//                             </p>
-//                             {/* <footer className="blockquote-footer">
-//                          <cite title="Source Title"></cite>
-//                             </footer> */}
-//                         </blockquote>
-//                     </div>
-//         </div>
-//         </div>
-//         </div>
-//         )
-// }
-// export default SignIn
+//                     <br />
+//                     <label for="exampleInputPassword1" class="col-sm-2 control-label">Password</label>
+//                     <input
+//                         onChange={(e) => {
+//                             setPassword(e.target.value)
+//                         }}
+//                         className="form-control" type="text" type="password" required style={{ width: "400px" }} />
+//                     {authErr && <p className="text-danger">{authErrMsg}</p>}
+
+//                     <br />
+//                     <button onClick={signIn} className="btn btn-success">SignIn</button>
+//                     {'  '}
+//     {'  '}
+//     {/* <button className="btn btn-success">SignIn AS Seller</button><br/>  */}
+//     <a href="/sellerSignin" className="btn btn-success">SignIn AS Seller</a>
+
+//                     <br /> <Link className="nav-link" to="/signup">SignUp</Link>
+//                     <Link to="/changepassword">Forgot Password ?</Link>
+
+//                 </div>
+
+//             </div>          <div className="col-lg-7" >
+//                 <img src={web1} alt="web" style={{ paddingLeft: "950px" }} />
+//                 {/* <p className="text-center">
+//                         {' '}
+//                         <h2><i>STAY HOME AND SHOP ONLINE.</i></h2>
+//                         {' '}
+//                     </p> */}
+//                 <blockquote className="" style={{ paddingLeft: "150px" }}>
+
+//                     {/* <footer className="blockquote-footer">
+//              <cite title="Source Title"></cite>
+//                 </footer> */}
+//                 </blockquote>
+
+//             </div>
+//               </div> 
+//                  </div>  
+//                    </div>  
+//                      </div>

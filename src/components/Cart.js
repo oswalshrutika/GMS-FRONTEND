@@ -58,7 +58,7 @@ const Cart = () => {
   };
 
 
-  return (<div><Navbar></Navbar>
+  return (<div>
     <div>
       <h1>My Cart</h1>
 

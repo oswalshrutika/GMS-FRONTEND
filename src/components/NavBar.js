@@ -4,7 +4,6 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link, useHistory } from 'react-router-dom'
-
 import { useDispatch, useSelector } from 'react-redux'
 import Logout from './Logout';
 const navigation = [
@@ -81,7 +80,7 @@ const Navbar = (props) => {
                     ))}
 
                     {sessionStorage.getItem("isLoggedin") == 'true' &&
-                      <Link className="nav-link" to="/cart">Cart  {cartItems.length}</Link>}
+                      <Link className="nav-link " to="/cart">Cart {cartItems.length}</Link>}
                   </div>
                 </div>
               </div>
