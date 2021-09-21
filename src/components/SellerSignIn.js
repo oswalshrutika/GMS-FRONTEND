@@ -89,7 +89,7 @@ const SellerSignIn = () => {
                             Sign In As Seller
                         </button>
                         <p className="text-xs text-gray-500 mt-3">
-                            <Link to="/changepassword"> Forgot Password ?</Link>
+                            <Link to="#"> Forgot Password ?</Link>
                         </p>
                         <p className="text-xs text-gray-500 mt-3">
                             If you are Customer Please <Link to="/signin-signup">Sign In here</Link>
