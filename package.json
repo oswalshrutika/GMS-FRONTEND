@@ -21,7 +21,7 @@
     "cors": "^2.8.5",
     "moment": "^2.29.1",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.6.1",
+    "react-bootstrap": "^2.0.0-beta.6",
     "react-chartjs-2": "^3.0.4",
     "react-components": "^0.5.1",
     "react-currency-format": "^1.0.0",

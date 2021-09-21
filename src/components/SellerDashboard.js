@@ -9,21 +9,20 @@ import SellerMenuBar from './SellerMenuBar'
 
 class SellerDashboard extends React.Component {
 
-  render(){
-  return (
-    <div>
-      < SellerNavbar />
-      <div className="py-5">
-        <Row>
-          <Col md={2}>
-            <SellerMenuBar />
-          </Col>
-          
-        </Row>
+  render() {
+    return (
+      <div>
+        <div className="py-6 ">
+          <Row>
+            <Col md={2} >
+              <SellerMenuBar  />
+            </Col>
+
+          </Row>
+        </div>
       </div>
-    </div>
-  )
- }
+    )
+  }
 }
 
 export default SellerDashboard

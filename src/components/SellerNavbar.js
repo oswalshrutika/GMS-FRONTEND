@@ -5,26 +5,15 @@ import { Button } from 'reactstrap'
 
 const SellerNavbar = () => {
 
-  
+
   return (
     <nav class="navbar navbar-expand-md navbar-dark bg-dark " >
-      <a className="navbar" href="/">
-      <img src="logo.png" alt="LOGO" height="60" />
-        </a>
+
       <div className="container">
-        <Link className="navbar-brand" href="/">
-        Grocery Shop
+        <Link className="navbar-brand float-left" to="/sellerDashboard">
+          Grocery Shop
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+
         <div className="collapse navbar-collapse" style={{ marginLeft: 620 }}>
           <ul className="navbar-nav mr-auto"></ul>
           <ul className="navbar-nav mr-auto justify-content-end">

@@ -1,63 +1,72 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Button, ListGroup, ListGroupItem } from 'reactstrap'
+import { BellIcon, MenuIcon, XIcon, ShoppingBagIcon, BiAddToQueue } from '@heroicons/react/outline'
 
 const SellerMenuBar = () => {
   return (
-    <div>
-      <ListGroup>
-        <ListGroupItem>
-          <NavLink className="nav-link" exact to="/sellerDashboard">
-            <h5>
-              {' '}
-              <i className="fa fa-dashboard"></i>
-              <p>Seller DashBoard</p>
-            </h5>
+    <div className="bg-pink border-1">
+      <ListGroup >
+
+
+        <ListGroupItem className=" border-0 p-3 bg-pink text-white">
+          <NavLink className=" border-0  text-gray-100" exact to="/product">
+
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+
+            </svg>
+            Add Product
           </NavLink>
         </ListGroupItem>
 
-        <ListGroupItem>
-          <NavLink className="nav-link" exact to="/product">
-            <Button outline color="danger">
-              ADD Product
-            </Button>
+        <ListGroupItem className=" border-0 inline p-3 bg-pink ">
+          <NavLink exact to="/addCategory " className="text-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Add Category
+
           </NavLink>
         </ListGroupItem>
 
-        <ListGroupItem>
-          <NavLink className="nav-link" exact to="/addCategory">
-            <Button outline color="secondary">
-              ADD Category
-            </Button>
+        <ListGroupItem className=" border-0 p-3 bg-pink ">
+          <NavLink className="text-gray-100" exact to="/allProducts">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+            View All products
           </NavLink>
         </ListGroupItem>
 
-        <ListGroupItem>
-          <NavLink className="nav-link" exact to="/allProducts">
-            <Button outline color="success">
-              View All products
-            </Button>
+        <ListGroupItem className=" border-0 p-3 bg-pink ">
+          <NavLink className="text-gray-100" exact to="/allCategory">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            View All Category
           </NavLink>
         </ListGroupItem>
 
-        <ListGroupItem>
-          <NavLink className="nav-link" exact to="/allCategory">
-            <Button outline color="danger">
-              View All Category
-            </Button>
+        <ListGroupItem className=" border-0 p-3 bg-pink ">
+          <NavLink className="text-gray-100" exact to="/sellerEditProfile">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Update Profile
           </NavLink>
         </ListGroupItem>
 
-        <ListGroupItem>
-          <NavLink className="nav-link" exact to="/sellerEditProfile">
-            <Button outline color="danger">
-             Update Profile
-            </Button>
-          </NavLink>
-        </ListGroupItem>
+
       </ListGroup>
+
+
     </div>
   )
 }
 
 export default SellerMenuBar
+
+
+
+

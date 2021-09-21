@@ -26,10 +26,7 @@ const SellerSignIn = () => {
                 const result = response.data
                 console.log(result)
                 if (result.companyEmail != 'admin@gmail.com') {
-                    alert('Seller successfully logged in')
-                    // saveTokenInLocalStorage(result)
-                    // if(result.role=='seller')
-                    //console.log(result)
+                  
 
                     sessionStorage.setItem("seller", JSON.stringify({ sellerId: result.sellerId, companyName: result.companyName, companyAddress: result.companyAddress, companyEmail: result.companyEmail, companyPhone: result.companyPhone, gstin: result.gstin, password: result.password, role: result.role }))
 

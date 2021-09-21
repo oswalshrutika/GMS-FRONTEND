@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon, ShoppingBagIcon } from '@heroicons/react/outline'
+import { BellIcon, MenuIcon, XIcon, ShoppingBagIcon, BiAddToQueue } from '@heroicons/react/outline'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Logout from './Logout';
@@ -30,6 +30,9 @@ const Navbar = (props) => {
 
   const onLogin = () => {
     history.push('/signin-signup')
+  }
+  const onProfile = () => {
+    history.push('/sellerProfile')
   }
 
   const onCart = () => {
@@ -89,33 +92,39 @@ const Navbar = (props) => {
                 </div>
               </div>
 
-              {sessionStorage.getItem("isLoggedin") == 'true' ? <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              {/* {sessionStorage.getItem("isLoggedin") == 'true' ? <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
+              } */}
 
-                {sessionStorage.getItem("isLoggedin") == 'true' &&
-                  <button className="ml-4 flow-root lg:ml-6" >
-                    <button className="group -m-2 p-2 flex items-center">
-                      <ShoppingBagIcon
-                        className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
-                        aria-hidden="true" onClick={onCart}
-                      />
-                      <span className="ml-2 text-sm font-medium text-white group-hover:text-white">{cartItems.length}</span>
-                      <span className="sr-only">items in cart, view bag</span>
-                    </button>
-                  </button>
-
-                }
-
+              {sessionStorage.getItem("isLoggedin") && <div className="inline-block">
+                <ShoppingBagIcon
+                  className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500 inline-block"
+                  onClick={onCart}
+                />
+                {cartItems.length}
                 <a href="/logout" className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium m-1">
                   Logout
                 </a>
+              </div>}
 
-              </div> : <button onClick={onLogin} className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+
+              {sessionStorage.getItem("seller") != null && <span>
+                <button onClick={onProfile} className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium m-2">
+                  My Profile
+                </button>
+                <a href="/logout" className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  Logout
+                </a>
+              </span>}
+
+              {(!sessionStorage.getItem("isLoggedin") || sessionStorage.getItem("seller") != null) && <button onClick={onLogin} className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Login
               </button>}
 
+
             </div>
           </div>
+
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
