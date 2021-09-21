@@ -218,7 +218,7 @@ const SignUp = () => {
         </p>
 
         <p className="text-xs text-gray-500 mt-3">
-          If you want Register as Seller <Link to="/signup" className="text-pink">Signup here</Link>
+          If you want Register as Seller <Link to="/sellerSignup" className="text-pink">Signup here</Link>
         </p>
       </div>
 

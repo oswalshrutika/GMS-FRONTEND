@@ -54,6 +54,13 @@ const SellerSignUp = () => {
 
   const sellerSignUp = (() => {
 
+    setCompanyNameErr(false)
+    setCompanyEmailErr(false)
+    setPasswordErr(false);
+    setCompanyPhoneErr(false);
+    setCompanyAddressErr(false)
+    setGstinErr(false);
+
     if (companyName.length == 0) {
       setCompanyNameErr(true)
       setCompanyNameErrMsg("Enter Company Name")
@@ -99,10 +106,10 @@ const SellerSignUp = () => {
       setGstinErrMsg(" Enter GSTIN Number")
     }
 
-    else if (!validGstin.test(gstin)) {
-      setGstinErr(true);
-      setGstinErrMsg(" Enter valid GSTIN Number")
-    }
+    // else if (!validGstin.test(gstin)) {
+    //   setGstinErr(true);
+    //   setGstinErrMsg(" Enter valid GSTIN Number")
+    // }
 
     else {
       const body = { sellerId: sellerId, companyName: companyName, companyEmail: companyEmail, password: password, companyPhone: companyPhone, companyAddress: companyAddress, gstin: gstin }
@@ -181,8 +188,8 @@ const SellerSignUp = () => {
               </label>
               <input
               onChange={(e) => {
-                setCompanyName(e.target.value)
-              }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
+                setCompanyEmail(e.target.value)
+              }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="google@gmail.com" />
               {companyEmailErr && <p className="text-red-500 text-xs italic">{companyEmailErrMsg}</p>}
             </div>
           </div>
@@ -211,7 +218,7 @@ const SellerSignUp = () => {
               onChange={(e) => {
                 setCompanyPhone(e.target.value)
               }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="+910000000" />
-              {companyPhoneErr && <p className="ext-red-500 text-xs italic">{companyPhoneErrMsg}</p>}
+              {companyPhoneErr && <p className="text-danger text-xs italic">{companyPhoneErrMsg}</p>}
             </div>
 
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -221,7 +228,7 @@ const SellerSignUp = () => {
               <input onChange={(e) => {
                setCompanyAddress(e.target.value)
               }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="eg: Pune" />
-              {companyAddressErr && <p className="ext-red-500 text-xs italic">{companyAddressErr}</p>}
+              {companyAddressErr && <p className="text-danger text-xs italic">{companyAddressErrMsg}</p>}
               
             </div>
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -231,7 +238,7 @@ const SellerSignUp = () => {
               <input onChange={(e) => {
                setGstin(e.target.value)
               }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="number" placeholder="415501" />
-              {gstinErr && <p className="text-danger">{gstinErrMsg}</p>}
+              {gstinErr && <p className="text-danger text-xs italic">{gstinErrMsg}</p>}
             </div>
   
             {/* <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
