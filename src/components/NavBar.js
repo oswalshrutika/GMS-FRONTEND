@@ -117,7 +117,7 @@ const Navbar = (props) => {
                 </a>
               </span>}
 
-              {(!sessionStorage.getItem("isLoggedin") || sessionStorage.getItem("seller") != null) && <button onClick={onLogin} className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              {sessionStorage.length==0 && <button onClick={onLogin} className="text-white bg-indigo-600 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Login
               </button>}
 

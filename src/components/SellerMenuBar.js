@@ -5,8 +5,22 @@ import { BellIcon, MenuIcon, XIcon, ShoppingBagIcon, BiAddToQueue } from '@heroi
 
 const SellerMenuBar = () => {
   return (
-    <div className="bg-pink border-1">
+    <div className="bg-pink border-1 ">
       <ListGroup >
+
+
+        <ListGroupItem className=" border-0 p-3 bg-pink text-white">
+          <NavLink className=" border-0  text-gray-100" exact to="/sellerDashboard">
+
+
+
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+            </svg>
+            Dashboard
+          </NavLink>
+        </ListGroupItem>
 
 
         <ListGroupItem className=" border-0 p-3 bg-pink text-white">
@@ -20,15 +34,16 @@ const SellerMenuBar = () => {
           </NavLink>
         </ListGroupItem>
 
-        <ListGroupItem className=" border-0 inline p-3 bg-pink ">
-          <NavLink exact to="/addCategory " className="text-gray-100">
+        <ListGroupItem className=" border-0 p-3 bg-pink ">
+          <NavLink className="text-gray-100" exact to="/addCategory">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
             Add Category
-
           </NavLink>
         </ListGroupItem>
+
+
 
         <ListGroupItem className=" border-0 p-3 bg-pink ">
           <NavLink className="text-gray-100" exact to="/allProducts">

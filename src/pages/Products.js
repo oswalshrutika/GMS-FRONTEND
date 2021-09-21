@@ -3,6 +3,7 @@ import { addToCartAction } from '../actions/cartActions'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { url } from '../common/constants'
+import SellerMenuBar from '../components/SellerMenuBar'
 const Products = () => {
   const [products, setProducts] = useState([])
 
@@ -11,8 +12,8 @@ const Products = () => {
   }, [])
   const getProducts = () => {
     axios.get(url + '/products/').then((response) => {
-        const result = response.data
-        setProducts(result)
+      const result = response.data
+      setProducts(result)
     })
   }
   // used to send action(s)
@@ -24,6 +25,7 @@ const Products = () => {
 
   return (
     <div>
+    
       <h1>Products</h1>
 
       <table className="table table-striped">
@@ -44,10 +46,10 @@ const Products = () => {
                 <td>{product.productId}</td>
                 <td>{product.productName}</td>
                 <td>{product.productPrice}</td>
-                <td> <img src={url+'/'+product.productImage}alt="" class="rounded"/></td>
+                <td> <img src={url + '/' + product.productImage} alt="" class="rounded" /></td>
                 <td>
                   <button
-                   className="btn btn-success btn-sm"
+                    className="btn btn-success btn-sm"
                     onClick={() => {
                       addToCart(product)
                     }}>
