@@ -11,16 +11,16 @@ class SellerDashboard extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="py-6 ">
-          <Row>
-            <Col md={2} >
-              <SellerMenuBar  />
+      <div className="relative top-0 bottom-2 bg-gray-200">
+        <div className="">
+          < Row >
+            <Col md={2}>
+              <SellerMenuBar />
             </Col>
 
-          </Row>
-        </div>
-      </div>
+          </Row >
+        </div >
+      </div >
     )
   }
 }

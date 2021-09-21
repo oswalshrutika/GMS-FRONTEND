@@ -3,44 +3,47 @@ import { useHistory } from 'react-router-dom'
 import { url } from '../common/constants';
 import axios from 'axios';
 import SellerNavbar from './SellerNavbar';
+import SellerMenuBar from './SellerMenuBar';
 
-const AddCategory=()=>{
-    const[categoryId, setCategoryId]= useState(0)
-    const[categoryName, setCategoryName]= useState('')
-    const[categoryDescription, setCategoryDescription]= useState('')
-    const[categoryImage, setCategoryImage]= useState(undefined)
+const AddCategory = () => {
+    const [categoryId, setCategoryId] = useState(0)
+    const [categoryName, setCategoryName] = useState('')
+    const [categoryDescription, setCategoryDescription] = useState('')
+    const [categoryImage, setCategoryImage] = useState(undefined)
     const history = useHistory()
 
-    const category=(()=>{
-        const body= new FormData();
+    const category = (() => {
+        const body = new FormData();
 
         body.append("categoryId", categoryId);
         body.append("categoryName", categoryName);
         body.append("categoryDescription", categoryDescription);
         body.append("categoryImage", categoryImage);
 
-        axios.post(url + `/category`, body).then(response=>{
-            const result= response.data
-            if(result){
+        axios.post(url + `/category`, body).then(response => {
+            const result = response.data
+            if (result) {
                 alert("success");
                 history.push("/sellerDashboard")
             }
-              
+
             else
                 alert("error");
-            })
-        
+        })
+
 
     })
 
 
     return (
-        <div div className="container-fluid">
-             < SellerNavbar />
-            <div className="row">
-                <div className="customer_border col-lg-5 col-sm-12 border-end border-4 p-5">
-                    <h1>Add Category</h1>
-                    {/* Category Id:  */}
+
+        <div className="grid grid-cols-4">
+            <div >
+                <SellerMenuBar />
+            </div>
+            <div className="col-span-3 p-3">
+                <div className="col-lg-5 col-sm-12  p-5">
+                    <h2 className="text-indigo-600">Add Category</h2>
                     <input
                         onChange={(e) => {
                             setCategoryId(e.target.value)
@@ -67,11 +70,14 @@ const AddCategory=()=>{
 
                     <br />
                     <button onClick={category} className="btn btn-success">Add Category</button>  {'  '}{'  '}{'  '}
-                    <a href="/sellerDashboard" className="btn btn-success">Back To DashBoard</a>
-                </div>
+                    <a href="/sellerDashboard" className="text-indigo-600 font-medium hover:text-indigo-500 p-3">Back To DashBoard <span aria-hidden="true"> &rarr;</span></a>
 
+                </div>
             </div>
+
         </div>
+
+
     )
 }
 export default AddCategory

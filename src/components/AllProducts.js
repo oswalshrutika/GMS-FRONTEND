@@ -31,102 +31,101 @@ const AllProducts = () => {
 
 
     return (
-        <div className="image">
-            < SellerNavbar />
-            <tr>
 
-                <td md={2}>
-                    <div>
-                        <SellerMenuBar />
-                    </div>
-                </td>
-                <tr >
-                    <h4 className="text-center">View All products</h4>
-                    <br />
-                    <br />
-                    {
 
-                        <table
+        <div className="grid grid-cols-4">
+            <div >
+                <SellerMenuBar />
+            </div>
+            <div className="col-span-3 p-3">
+                <h2 className="text-indigo-600">All Products</h2>
+                <table
 
-                            className="table table-striped "
-                            border='1' >
-                            <thead>
-                                <tr>
+                    className="min-w-full divide-y divide-gray-200 "
+                >
+                    <thead className="bg-gray-100">
+                        <tr>
 
-                                    <th scope="col" colSpan="1">
-                                        Product Id
-                                    </th>
-                                    <th scope="col" colSpan="1">
-                                        Product Name
-                                    </th>
-                                    <th scope="col" colSpan="1">
-                                        Product Image
-                                    </th>
-                                    <th scope="col" colSpan="1">
-                                        Quantity Per Unit
-                                    </th>
+                            <th className="text-gray-500 uppercase">
+                                Product Id
+                            </th>
+                            <th className="text-gray-500 uppercase">
+                                Product Details
+                            </th>
 
-                                    <th scope="col" colSpan="1">
-                                        Product Price
-                                    </th>
-                                    <th scope="col" colSpan="1">
-                                        Product Discount
-                                    </th>
-                                    <th scope="col" colSpan="1">
-                                        Product Rating
-                                    </th>
-                                    <th scope="col" colSpan="1">
-                                        Category Id
-                                    </th>
-                                    <th scope="col" colSpan="1">
-                                        Seller Id
-                                    </th>
+                            <th className="text-gray-500 uppercase">
+                                Quantity Per Unit
+                            </th>
 
-                                </tr>
-                            </thead>
+                            <th className="text-gray-500 uppercase">
+                                Product Price
+                            </th>
+                            <th className="text-gray-500 uppercase">
+                                Product Discount
+                            </th>
+                            <th className="text-gray-500 uppercase">
+                                Product Rating
+                            </th>
+                            <th className="text-gray-500 uppercase">
+                                Category Id
+                            </th>
+                            <th className="text-gray-500 uppercase">
+                                Seller Id
+                            </th>
 
-<tbody>
-{
-                        category.map((cat) => {
-                            return (
+                        </tr>
+                    </thead>
+
+                    <tbody className="bg-white divide-y divide-gray-200">
+                        {
+                            category.map((cat) => {
+                                return (
 
                                     cat.productItem.map((product) => {
                                         return (
 
-                                    
 
-                                                
-                                                    product.seeller_id == seller.sellerId && (
-                                                        <tr>
-                                                            <td >{product.productId}</td>
 
-                                                            <td >{product.productName}</td>
-                                                            <td>
-                                                                <img src={url + '/' + product.productImage} alt="" class="rounded" height="150px" width="200px" />
 
-                                                            </td>
-                                                            <td >{product.quantityPerUnit}</td>
-                                                            <td >{product.productPrice}</td>
-                                                            <td >{product.productDiscount}</td>
-                                                            <td >{product.productRating}</td>
-                                                            <td >{cat.categoryId}</td>
-                                                            <td >{product.seeller_id}</td>
-                                                        </tr>
-                                                    ) 
-                 
+                                            product.supplierId == seller.sellerId && (
+                                                <tr key={product.productId}>
+                                                    <td >{product.productId}</td>
+
+                                                    <td className="px-6 py-4 whitespace-nowrap">
+                                                        <div className="flex items-center">
+                                                            <div className="flex-shrink-0 h-10 w-10">
+                                                                <img className="h-10 w-10 rounded-full" src={url + '/' + product.productImage} alt="" />
+                                                            </div>
+                                                            <div className="ml-4">
+                                                                <div className="text-sm font-medium text-gray-900">{product.productName}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+
+                                                    <td >{product.quantityPerUnit}</td>
+                                                    <td >{product.productPrice}</td>
+                                                    <td >{product.productDiscount}</td>
+                                                    <td >{product.productRating}</td>
+                                                    <td >{cat.categoryId}</td>
+                                                    <td >{product.supplierId}</td>
+                                                </tr>
+                                            )
+
                                         )
-                                    }))}
-                        )}
+                                    }))
+                            }
+                            )}
 
-                            </tbody>
-                        </table>
+                    </tbody>
+                </table>
 
-                           
-                        }
-                
-                </tr>
-            </tr>
-        </div>
+                <a href="/sellerDashboard" className="text-indigo-600 font-medium hover:text-indigo-500 p-3">Back To DashBoard <span aria-hidden="true"> &rarr;</span></a>
+
+            </div>
+        </div >
+
+
 
     )
 
