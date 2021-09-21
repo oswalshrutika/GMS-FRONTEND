@@ -33,6 +33,7 @@ import Delivery from './components/Delivery';
 import Order from './components/Order';
 import AdminDashBoard from './components/AdminDashBoard';
 import Navbar from './components/NavBar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -80,14 +81,16 @@ function App() {
             </Route>
             <Route path="/" component={Home}></Route>
 
-            {/* <Redirect to="/" /> 
-             */}
+
 
 
           </Switch>
-        </BrowserRouter>
-      </div>
 
+
+        </BrowserRouter>
+
+      </div>
+      <Footer />
 
     </div>
   );

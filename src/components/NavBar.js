@@ -31,10 +31,14 @@ const Navbar = (props) => {
     history.push('/signin-signup')
   }
 
+  const onCart = () => {
+    history.push('/cart')
+  }
+
   const cartItems = useSelector((state) => state.cartItems)
 
   return (
-    <Disclosure as="nav" className="bg-pink mb-5">
+    <Disclosure as="nav" className="bg-pink mb-5 sticky top-0">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -88,16 +92,16 @@ const Navbar = (props) => {
 
 
                 {sessionStorage.getItem("isLoggedin") == 'true' &&
-                  <Link className="ml-4 flow-root lg:ml-6" to="/cart">
-                    <Link to="/cart" className="group -m-2 p-2 flex items-center">
+                  <button className="ml-4 flow-root lg:ml-6" >
+                    <button className="group -m-2 p-2 flex items-center">
                       <ShoppingBagIcon
                         className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
-                        aria-hidden="true"
+                        aria-hidden="true" onClick={onCart}
                       />
                       <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cartItems.length}</span>
                       <span className="sr-only">items in cart, view bag</span>
-                    </Link>
-                  </Link>
+                    </button>
+                  </button>
                 }
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">

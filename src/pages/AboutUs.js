@@ -1,3 +1,4 @@
+import Footer from "../components/Footer"
 import Navbar from "../components/NavBar"
 
 const AboutUs = () => {
@@ -76,7 +77,6 @@ const AboutUs = () => {
       </div>
     </div>
     </div>
-  
 </div>
             </div>
         </div>

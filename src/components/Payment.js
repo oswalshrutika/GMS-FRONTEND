@@ -5,8 +5,7 @@ const Payment = () => {
     const amount=JSON.parse(sessionStorage.getItem('payment'))
      console.log(amount)
     return (
-        <div>a
-            <Navbar></Navbar>
+        <div>
             <h2>Your total amount is  ₹{amount.cartTotal} , you can pay using following option</h2>
             <dl>
                 <dt>Pay via upi id</dt>
