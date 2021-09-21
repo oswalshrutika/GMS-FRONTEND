@@ -2,34 +2,45 @@
 import Navbar from './NavBar';
 
 const Delivery = () => {
-    const date = new Date(); 
-    console.log("🚀 ~ file: Delivery.js ~ line 6 ~ Delivery ~ date", date)
-    const today = new Date(date);
-const tomorrow = new Date(today);
-//  const date = moment()
-// .utcOffset('+05:30')
-// .format('YYYY-MM-DD hh:mm:ss a');
+
+    const today = new Date()
+    var tomorrow = new Date()
+    tomorrow.setDate(today.getDate() + 7)
+    const t2 = tomorrow.toDateString()
+
+
 
     return (
         <div>
-            <Navbar></Navbar>
-            <h2>Order received on : 
-            {new Date().toLocaleString() + ''} <br/>
-            </h2>
-            <h2>Order deliverd on : 
-           {
-            tomorrow.setDate(date)}
-            {
-               
-              new Date.today().addDays(1).toString("dd-mm-yyyy")
 
 
-                
-            }
-         
-            </h2>
+            <div className="float-center m-5">
+                <h1 className="lg:text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                    <span className="block xl:inline">Your will get your order by </span>{' '}
+                    <span className="block text-pink xl:inline">{t2}</span>
+                </h1>
 
-        </div>
+                <span className="block xl:inline text-xl text-gray-500">Thank you for shopping with GroceryManagementSystem</span>{' '}
+            </div>
+
+            <div className="m-10">
+                <a
+                    href="/categorylist"
+                    className="text-indigo-600 font-medium hover:text-indigo-500 text-2xl">
+                    Continue Shopping <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </div>
+
+            {/* <button
+                type="button"
+                className="text-indigo-600 font-medium hover:text-indigo-500"
+                onClick={() => click()}
+            >
+                Continue Shopping<span aria-hidden="true"> &rarr;</span>
+            </button> */}
+
+
+        </div >
     )
 }
 
