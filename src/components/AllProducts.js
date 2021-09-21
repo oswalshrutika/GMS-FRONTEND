@@ -67,10 +67,10 @@ const AllProducts = () => {
                                 Product Rating
                             </th>
                             <th className="text-gray-500 uppercase">
-                                Category Id
+                                Category Name
                             </th>
                             <th className="text-gray-500 uppercase">
-                                Seller Id
+                                Seller Company Name
                             </th>
 
                         </tr>
@@ -107,8 +107,9 @@ const AllProducts = () => {
                                                     <td >{product.productPrice}</td>
                                                     <td >{product.productDiscount}</td>
                                                     <td >{product.productRating}</td>
-                                                    <td >{cat.categoryId}</td>
-                                                    <td >{product.supplierId}</td>
+                                                    <td >{cat.categoryName}</td>
+                                                    {/* <td >{product.supplierId}</td> */}
+                                                    <td >{seller.companyName}</td>
                                                 </tr>
                                             )
 
