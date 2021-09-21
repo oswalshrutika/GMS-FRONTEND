@@ -133,7 +133,7 @@ const SignUp = () => {
 
   return (
 
-    <div className="grid grid-cols-2">
+    <div className="grid lg:grid-cols-2 sm:grid-cols-2">
       <div >
         <img src={signup} alt="img" />
       </div>
