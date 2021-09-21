@@ -6,10 +6,8 @@ import Navbar from './NavBar';
 
 const Logout = () => {
     const history = useHistory()
-    localStorage.removeItem('user')
-    sessionStorage.removeItem('seller')
-    sessionStorage.removeItem('isLoggedin')
-    sessionStorage.removeItem('isLogin')
+   
+    sessionStorage.clear()
 
     return (
         <div>

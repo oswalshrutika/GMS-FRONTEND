@@ -1,14 +1,15 @@
-import { Link ,useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { url } from '../common/constants'
+import SellerMenuBar from './SellerMenuBar';
 
 
-const SellerProfile=()=>{
-    const history = useHistory()
- //  const user= JSON.parse(localStorage.getItem('user'))  //u=user
- const [seller,setSeller] = useState(JSON.parse(sessionStorage.getItem('seller')))
- console.log(sessionStorage.getItem('seller'))
+const SellerProfile = () => {
+  const history = useHistory()
+  //  const user= JSON.parse(localStorage.getItem('user'))  //u=user
+  const [seller, setSeller] = useState(JSON.parse(sessionStorage.getItem('seller')))
+  console.log(sessionStorage.getItem('seller'))
 
   //  const [user, setUser] = useState([])
 
@@ -16,7 +17,7 @@ const SellerProfile=()=>{
   //    console.log(`User got loaded`)
   //    getUser()
   //  }, [])
- 
+
   //  const getUser = () => {
   //    axios.get(url + `/users/${user1.userid}`).then((response) => {
   //      const result = response.data
@@ -27,59 +28,66 @@ const SellerProfile=()=>{
   //      }
   //    })
   //  }
- 
-   return (
-     <div>
-       <h1 className="page-title">My Info</h1>
-       <Link className="nav-link" to="/sellerDashboard" style={{marginLeft:'1000px'}}>
-                <button type="submit" className="btn btn-primary"  > Back To DashBoard </button>   
-      </Link>
 
-       <button
+  return (
+
+
+    <div className="grid grid-cols-4">
+      <div >
+        <SellerMenuBar />
+      </div>
+
+
+
+      <div className="col-span-3 p-3">
+        <table className="min-w-full divide-y divide-gray-200">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="text-gray-500 uppercase ">Seller Id</th>
+              <th className="text-gray-500 uppercase ">Company Name</th>
+              <th className="text-gray-500 uppercase ">Company Email</th>
+              <th className="text-gray-500 uppercase ">Company Phone </th>
+              <th className="text-gray-500 uppercase ">Comapny Address</th>
+              <th className="text-gray-500 uppercase ">GSTIN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> {seller.sellerId} </td>
+              <td> {seller.companyName}</td>
+              <td>{seller.companyEmail}</td>
+              <td>{seller.companyPhone}</td>
+              <td>{seller.companyAddress}</td>
+              <td>{seller.gstin}</td>
+            </tr>
+
+            <tr>
+
+            </tr>
+          </tbody>
+        </table>
+
+
+        <button
           onClick={() => {
             history.push(`/sellerEditProfile/${seller.sellerId}`)
           }}
-          className="btn btn-secondary btn-sm" >
-                Edit 
-       </button>
+          className="text-blue-600 font-medium hover:text-indigo-500 p-3" >
+          Edit
+        </button>
 
+        <button
+          onClick={() => {
+            history.push(`/changeSellerPassword/${seller.sellerId}`, { seller: seller })
+          }}
+          className="text-red-600 font-medium hover:text-indigo-500 p-3">
+          Change password
+        </button>
 
-                    <button
-                       onClick={() => {
-                         history.push(`/changeSellerPassword/${seller.sellerId}`, {seller:seller})
-                        }}
-                       className="btn btn-danger btn-sm">
-                             Changepassword
-                      </button>
- 
+      </div>
 
-       <table className="table table-striped">
-         <thead>
-           <tr>
-           <th>Seller Id</th>
-             <th>Company Name</th>
-             <th>Company Email</th>
-             <th>Company Phone </th>
-             <th>Comapny Address</th>
-             <th>GSTIN</th>
-           </tr>
-         </thead>
-         <tbody>
-           <tr>
-               <td> {seller.sellerId} </td> 
-               <td> {seller.companyName}</td>
-               <td>{seller.companyEmail}</td>
-               <td>{seller.companyPhone}</td>
-               <td>{seller.companyAddress}</td>
-               <td>{seller.gstin}</td>
-           </tr>
+    </div>
 
-           <tr>
-                      
-           </tr>
-         </tbody>
-       </table>
-     </div>
-   )
+  )
 }
 export default SellerProfile;

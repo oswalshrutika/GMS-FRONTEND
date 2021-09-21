@@ -11,16 +11,19 @@ class SellerDashboard extends React.Component {
 
   render() {
     return (
-      <div className="relative top-0 bottom-2 bg-gray-200">
-        <div className="">
-          < Row >
-            <Col md={2}>
-              <SellerMenuBar />
-            </Col>
 
-          </Row >
-        </div >
-      </div >
+
+      <div className="grid grid-cols-4">
+        <div >
+          <SellerMenuBar />
+        </div>
+        <div className="col-span-3 p-3">
+
+          <h1>Welcome <h1 className="text-indigo-600">{JSON.parse(sessionStorage.getItem("seller")).companyName}</h1></h1>
+
+        </div>
+      </div>
+
     )
   }
 }
