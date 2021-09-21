@@ -3,6 +3,7 @@ import { emailurl, url } from '../common/constants';
 import axios from 'axios';
 import {useHistory,useLocation } from 'react-router-dom'
 import web1 from './gifs/basket.gif'
+import { validCompanyEmail, validCompanyName, validcompanyPhone, validPassword } from '../common/Regex';
 
 
 const SellerSignUp = () => {
@@ -17,15 +18,19 @@ const SellerSignUp = () => {
   // const [role, setRole] = useState('')
 
   
-  // const [companyNameErr, setCompanyNameErr] = useState(false)
-  // const [companyNameErrMsg, setCompanyNameErrMsg] = useState('')
-  // const [companyEmailErr, setCompanyEmailErr] = useState(false)
-  // const [companyEmailErrMsg, setCompanyEmailErrMsg] = useState('')
-  // const [passwordErr, setPasswordErr] = useState('')
-  // const [passwordErrMsg, setPasswordErr] = useState('')
-  // const [companyPhoneErr, setCompanyPhoneErr] = useState('')
-  // const [companyAddressErr, setCompanyAddressErr]=useState('')
-  // const [gstinErr, setGstinErr] = useState('')
+  const [companyNameErr, setCompanyNameErr] = useState(false)
+  const [companyNameErrMsg, setCompanyNameErrMsg] = useState('')
+  const [companyEmailErr, setCompanyEmailErr] = useState(false)
+  const [companyEmailErrMsg, setCompanyEmailErrMsg] = useState('')
+  const [passwordErr, setPasswordErr] = useState(false)
+  const [passwordErrMsg, setPasswordErrMsg] = useState('')
+  const [companyPhoneErr, setCompanyPhoneErr] = useState(false)
+  const [companyPhoneErrMsg, setCompanyPhoneErrMsg] = useState('')
+  const [companyAddressErr, setCompanyAddressErr]=useState(false)
+  const [companyAddressErrMsg, setCompanyAddressErrMsg]=useState('')
+  const [gstinErr, setGstinErr] = useState(false)
+  const [gstinErrMsg, setGstinErrMsg] = useState('')
+
 
 
 
@@ -48,6 +53,46 @@ const SellerSignUp = () => {
 
 
   const sellerSignUp = (() => {
+
+    if(companyName.length==0){
+      setCompanyNameErr(true)
+      setCompanyNameErrMsg("Enter Company Name")
+    }
+
+    else if(!validCompanyName.test(companyName)){
+      setCompanyNameErr(true)
+      setCompanyNameErrMsg("Enter valid Company Name")
+    }
+
+    else if(companyEmail.length==0){
+      setCompanyEmailErr(true)
+      setCompanyEmailErrMsg("Enter Company Email")
+    }
+    else if(!validCompanyEmail.test(companyEmail)){
+      setCompanyEmailErr(true)
+      setCompanyEmailErrMsg("Enter valid Company Email")
+    }
+    else if (password.length == 0) {
+      setPasswordErr(true);
+      setPasswordErrMsg("enter password")
+    }
+    else if (!validPassword.test(password)) {
+      setPasswordErr(true);
+      setPasswordErrMsg("Your password is not strong enough")
+    }
+    else if (companyPhone.length == 0) {
+      setCompanyPhoneErr(true);
+      setCompanyPhoneErrMsg("Enter phone number")
+    }
+    else if (!validcompanyPhone.test(companyPhone)) {
+      setCompanyPhoneErr(true);
+      setCompanyPhoneErrMsg("Enter valid phone number")
+    }
+
+    else if (companyAddress.length == 0) {
+      setCompanyAddressErr(true)
+      setCompanyAddressErrMsg("Enter Address")
+    }
     
       const body = { sellerId: sellerId,companyName: companyName, companyEmail:companyEmail, password: password, companyPhone: companyPhone, companyAddress:companyAddress,  gstin:gstin }
 

@@ -17,15 +17,14 @@ const SignUp = () => {
   const [phoneNo, setPhoneNo] = useState('')
   const [address, setAddress] = useState('')
   const [pinCode, setPinCode] = useState('')
-  const [role, setRole] = useState('')
+
   const history = useHistory()
   const [invalidErr, setInvalidErr] = useState(false)
   const [invalidErrMsg, setInvalidErrMsg] = useState("")
 
   const [addressErr, setAddressErr] = useState(false)
   const [addressErrMsg, setAddressErrMsg] = useState('')
-  const [roleErr, setRoleErr] = useState(false)
-  const [roleErrMsg, setRoleErrMsg] = useState('')
+ 
   const [nameErr, setNameErr] = useState(false);
   const [nameErrMsg, setNameErrMsg] = useState("");
   const [emailErr, setEmailErr] = useState(false);
@@ -60,7 +59,7 @@ const SignUp = () => {
     setPwdError(false)
     setPhoneErr(false)
     setPinCodeErr(false)
-    setRoleErr(false)
+   
     setAddressErr(false)
 
     if (name.length == 0) {
@@ -159,7 +158,7 @@ const SignUp = () => {
             <input onChange={(e) => {
               setEmail(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" />
-            {emailErr && <p classNameName="text-red-500 text-xs italic">{emailErrMsg}</p>}
+            {emailErr && <p className="text-red-500 text-xs italic">{emailErrMsg}</p>}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
@@ -171,7 +170,7 @@ const SignUp = () => {
               setPassword(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************" />
             <p className="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
-            {pwdError && <p classNameName="ext-red-500 text-xs italic">{pwdErrorMsg}</p>}
+            {pwdError && <p className="ext-red-500 text-xs italic">{pwdErrorMsg}</p>}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-2">
@@ -182,7 +181,7 @@ const SignUp = () => {
             <input onChange={(e) => {
               setPhoneNo(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="+910000000" />
-            {phoneErr && <p classNameName="ext-red-500 text-xs italic">{phoneErrMsg}</p>}
+            {phoneErr && <p className="ext-red-500 text-xs italic">{phoneErrMsg}</p>}
           </div>
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
@@ -191,7 +190,7 @@ const SignUp = () => {
             <input onChange={(e) => {
               setAddress(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="eg: Pune" />
-            {addressErr && <p classNameName="ext-red-500 text-xs italic">{addressErrMsg}</p>}
+            {addressErr && <p className="ext-red-500 text-xs italic">{addressErrMsg}</p>}
             
           </div>
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -201,7 +200,7 @@ const SignUp = () => {
             <input onChange={(e) => {
               setPinCode(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="number" placeholder="90210" />
-            {pinCodeErr && <p classNameName="text-danger">{pinCodeErrMsg}</p>}
+            {pinCodeErr && <p className="text-danger">{pinCodeErrMsg}</p>}
           </div>
 
           {/* <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -225,7 +224,7 @@ const SignUp = () => {
       </form>
 
       {invalidErr && <p classNameName="text-danger">{invalidErrMsg}</p>}
-      <button onClick={signup} classNameName="btn btn-success">Signup</button>
+      <button onClick={signup} className="btn btn-success">Signup</button>
     </div >
 
   )
