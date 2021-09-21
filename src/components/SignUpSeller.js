@@ -16,7 +16,16 @@ const SellerSignUp = () => {
   const [gstin, setGstin] = useState('')
   // const [role, setRole] = useState('')
 
-
+  
+  // const [companyNameErr, setCompanyNameErr] = useState(false)
+  // const [companyNameErrMsg, setCompanyNameErrMsg] = useState('')
+  // const [companyEmailErr, setCompanyEmailErr] = useState(false)
+  // const [companyEmailErrMsg, setCompanyEmailErrMsg] = useState('')
+  // const [passwordErr, setPasswordErr] = useState('')
+  // const [passwordErrMsg, setPasswordErr] = useState('')
+  // const [companyPhoneErr, setCompanyPhoneErr] = useState('')
+  // const [companyAddressErr, setCompanyAddressErr]=useState('')
+  // const [gstinErr, setGstinErr] = useState('')
 
 
 

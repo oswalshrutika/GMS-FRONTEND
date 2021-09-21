@@ -104,13 +104,13 @@ const SignUp = () => {
       setPinCodeErr(true);
       setPinCodeErrMsg("please enter a valid pincode")
     }
-    else if (role.length == 0) {
-      setRoleErr(true)
-      setRoleErrMsg("please select a role")
-    }
+    // else if (role.length == 0) {
+    //   setRoleErr(true)
+    //   setRoleErrMsg("please select a role")
+    // }
     else {
       console.log("in signup form ß")
-      const body = { id: id, name: name, email: email, password: password, phoneNo: phoneNo, address: address, pinCode: pinCode, role: role }
+      const body = { id: id, name: name, email: email, password: password, phoneNo: phoneNo, address: address, pinCode: pinCode} 
       axios.post(url + `/admin/register`, body).then(response => {
         const result = response.data;
         if (result) {
@@ -124,11 +124,11 @@ const SignUp = () => {
         //   setInvalidErr(true)
         //   setInvalidErrMsg("entered input is not a valid input")
       })
+    
     }
+    })
 
-
-
-  })
+  
 
 
 
@@ -182,6 +182,7 @@ const SignUp = () => {
             <input onChange={(e) => {
               setPhoneNo(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="+910000000" />
+            {phoneErr && <p classNameName="ext-red-500 text-xs italic">{phoneErrMsg}</p>}
           </div>
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
@@ -190,6 +191,8 @@ const SignUp = () => {
             <input onChange={(e) => {
               setAddress(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="eg: Pune" />
+            {addressErr && <p classNameName="ext-red-500 text-xs italic">{addressErrMsg}</p>}
+            
           </div>
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
@@ -198,10 +201,10 @@ const SignUp = () => {
             <input onChange={(e) => {
               setPinCode(e.target.value)
             }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="number" placeholder="90210" />
-            {addressErr && <p classNameName="text-danger">{addressErrMsg}</p>}
+            {pinCodeErr && <p classNameName="text-danger">{pinCodeErrMsg}</p>}
           </div>
 
-          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+          {/* <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
               Role
             </label>
@@ -217,7 +220,7 @@ const SignUp = () => {
               </div>
             </div>
             {roleErr && <p classNameName="text-danger">{roleErrMsg}</p>}
-          </div>
+          </div> */}
         </div>
       </form>
 
