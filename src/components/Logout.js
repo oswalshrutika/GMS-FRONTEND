@@ -10,7 +10,6 @@ const Logout=()=>{
     sessionStorage.removeItem('isLoggedin')
     return (
         <div>
-            <Navbar/>
         <div className="col-lg-7" >
         <br/>
         <blockquote className="blockquote mb-0" style={{ paddingLeft: "100px" }}>

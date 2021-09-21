@@ -7,8 +7,8 @@ import Footer from "../components/Footer"
 function Home() {
   return (
     <div className="App">
-      <div className="preloader">
-        <div className="loader">
+      <div className="">
+        <div className="">
           <div className="ytp-spinner">
             <div className="ytp-spinner-container">
               <div className="ytp-spinner-rotator">

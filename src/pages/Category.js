@@ -21,6 +21,7 @@ const Category = () => {
     getCategory()
   }, [])
 
+  const [count, setCount] = useState(0);
 
   const location = useLocation()
   const cat = location.state.cat;
@@ -36,10 +37,15 @@ const Category = () => {
 
   const addToCart = (product) => {
     dispatch(addToCartAction(product))
+    setCount(count + 1)
   }
 
   const removeFromCart = (product) => {
     dispatch(removeFromCartAction(product))
+  }
+
+  const productCounter = () => {
+
   }
   return (
     <div>
@@ -74,11 +80,12 @@ const Category = () => {
 
                 {sessionStorage.getItem("isLoggedin") == 'true' &&
                   <button
-                    className="btn btn-success btn-sm"
+                    className="btn btn-success btn-sm m-2 p-2"
                     onClick={() => {
                       addToCart(product)
+
                     }}>
-                    Add To Cart
+                    Add to cart
                   </button>}
 
                 {sessionStorage.getItem("isLoggedin") == 'true' &&
@@ -86,6 +93,7 @@ const Category = () => {
                     className="btn btn-outline-success"
                     onClick={() => {
                       addToCart(product)
+                       
                     }}>
                     +
                   </button>}
@@ -95,7 +103,7 @@ const Category = () => {
         </div>
       </div >
 
- 
+
     </div>
   )
 

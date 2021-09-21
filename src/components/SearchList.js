@@ -21,7 +21,7 @@ function SearchList({ filteredcategory }) {
 
     return (
 
-        <div className="row">
+        <div className="row p-3">
             {
                 filteredcategory.length !== 0 ? filteredcategory.map((cat) => {
                     return (
@@ -34,19 +34,20 @@ function SearchList({ filteredcategory }) {
 
 
                             }}
-                            className="col-lg-4 col-md-6"
+                            className="col-lg-4 col-md-6 col-sm-2 p-3"
                         >
 
 
                             <div >
 
                                 <div className="single-service wow fadeInUp " data-wow-delay=".2s">
-                                    <div className="icon">
+                                    <div className="icon w-20">
                                         <img src={url + '/' + cat.categoryImage} alt="" />
                                     </div>
-                                    <div className="content">
-                                        <h3>{cat.categoryName}</h3>
-                                        <p>{cat.categoryDescription}</p>
+                                    <div className="content float-left ">
+                                    <p className="content float-left text-gray-400"> {cat.categoryDescription}</p>
+
+                                        <h3 className="text-gray-700">{cat.categoryName}</h3>
                                     </div>
                                 </div>
                             </div>

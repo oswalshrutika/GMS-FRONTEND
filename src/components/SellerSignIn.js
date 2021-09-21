@@ -35,7 +35,7 @@ const SellerSignIn = () => {
 
                     sessionStorage.setItem("isLogin", true)
 
-                    history.push('/sellerDashboard')
+                    window.location.href = '/sellerDashboard'
 
 
                 }

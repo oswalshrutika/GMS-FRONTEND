@@ -27,36 +27,6 @@ const CategoryList = () => {
         <div >
             <Search categories={category} />
 
-            {/* <ul className="list-inline-item ">
-                {
-                    category.map((cat) => {
-                        return (
-
-                            <div className="list-inline-item">
-                                <div className="cards">
-                                    <div className="card2 border border-2">
-                                        <a
-                                            onClick={() => {
-                                                history.push(`/category/${cat.categoryName}`, { cat: cat })
-                                                
-
-                                            }}
-                                        >
-                                            <img src={url + '/' + cat.categoryImage} className="card-img-top m-auto" alt="" /><br></br>
-                                       
-                                            <div className="card-body" style={{ textAlign: "center" }}>
-                                                <h4 style={{ color: "black", fontStyle: "oblique" }} >{cat.categoryName}</h4>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        )
-
-                    })
-                }
-            </ul> */}
 
         </div>
     )

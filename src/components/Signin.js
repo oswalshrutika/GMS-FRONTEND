@@ -22,17 +22,6 @@ const SignIn = () => {
     }
     const signIn = (() => {
 
-        // if (email.length === 0) {
-        //     setEmailErr(true);
-        //     setEmailErrMsg("Please Enter email")
-        // }
-        // else if (!validEmail.test(email)) {
-        //     setEmailErr(true);
-        //     setEmailErrMsg("Please Enter a valid email")
-        // }
-        // else if (password.length === 0) {
-        //     alert('enter password')
-        // }
 
         if (email.length === 0) {
             alert('Enter email')
@@ -48,12 +37,10 @@ const SignIn = () => {
                 const result = response.data
                 saveTokenInLocalStorage(result)
                 sessionStorage.setItem("isLoggedin", true)
-                history.push('/home')
+                // history.push('/home')
+                window.location.href = '/home'
             })
-            // }).catch(err => {
-            //     setAuthErr(true)
-            //     setAuthErrMsg("email or password is incorrect..")
-            // })
+
         }
 
     })
