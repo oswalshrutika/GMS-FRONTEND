@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { url } from '../common/constants';
 import SellerMenuBar from './SellerMenuBar';
 import toast, { Toaster } from 'react-hot-toast';
+import axios from  'axios';
 
 const AddCategory = () => {
     const [categoryId, setCategoryId] = useState(0)
