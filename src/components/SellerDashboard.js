@@ -7,25 +7,36 @@ import { Row, Col } from 'reactstrap'
 import SellerNavbar from './SellerNavbar'
 import SellerMenuBar from './SellerMenuBar'
 
-class SellerDashboard extends React.Component {
-
-  render() {
-    return (
+import { useState, useEffect } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 
 
-      <div className="grid grid-cols-4">
-        <div >
-          <SellerMenuBar />
-        </div>
-        <div className="col-span-3 p-3">
+const SellerDashboard = () => {
+  useEffect(() => {
+    toast.success(`Welcome back `)
+  }, [])
 
-          <h1>Welcome <h1 className="text-indigo-600">{JSON.parse(sessionStorage.getItem("seller")).companyName}</h1></h1>
 
-        </div>
+  return (
+
+
+    <div className="grid grid-cols-4">
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+      />
+      <div >
+        <SellerMenuBar />
       </div>
+      <div className="col-span-3 p-3">
 
-    )
-  }
+        <h1>Welcome <h1 className="text-indigo-600">{JSON.parse(sessionStorage.getItem("seller")).companyName}</h1></h1>
+
+      </div>
+    </div>
+
+  )
+
 }
 
 export default SellerDashboard

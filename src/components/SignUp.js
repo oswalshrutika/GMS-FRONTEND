@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { url } from '../common/constants';
 import { validEmail, validPassword, validPhone, validPincode } from '../common/Regex';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const SignUp = () => {
@@ -61,43 +62,63 @@ const SignUp = () => {
 
     if (name.length == 0) {
       setNameErr(true)
+      toast.error('fix error')
+
       setNameErrMsg("please enter name")
     }
     else if (email.length == 0) {
       setEmailErr(true);
+      toast.error('fix error')
+
       setEmailErrMsg("please enter email")
     }
     else if (!validEmail.test(email)) {
       setEmailErr(true);
+      toast.error('fix error')
+
       setEmailErrMsg("please enter a valid email")
     }
     else if (password.length == 0) {
       setPwdError(true);
+      toast.error('fix error')
+
       setPwdErrorMsg("please enter password")
     }
     else if (!validPassword.test(password)) {
       setPwdError(true);
+      toast.error('fix error')
+
       setPwdErrorMsg("Your password is not strong enough")
     }
     else if (phoneNo.length == 0) {
       setPhoneErr(true);
+      toast.error('fix error')
+
       setPhoneErrMsg("please enter phone number")
     }
     else if (!validPhone.test(phoneNo)) {
       setPhoneErr(true);
+      toast.error('fix error')
+
       setPhoneErrMsg("please enter a valid phone number")
     }
     else if (address.length == 0) {
       setAddressErr(true)
+      toast.error('fix error')
+
       setAddressErrMsg("Please Enter Address")
     }
     else if (pinCode.length == 0) {
       setPinCodeErr(true);
+      toast.error('fix error')
+
       setPinCodeErrMsg("please enter pincode")
     }
 
     else if (!validPincode.test(pinCode)) {
       setPinCodeErr(true);
+      toast.error('fix error')
+
       setPinCodeErrMsg("please enter a valid pincode")
     }
     // else if (role.length == 0) {
@@ -110,7 +131,7 @@ const SignUp = () => {
       axios.post(url + `/admin/register`, body).then(response => {
         const result = response.data;
         if (result) {
-          alert('succcess')
+          toast.success('Sign Up Success Please Login to continue ')
           history.push('/home')
         }
         else {
@@ -131,6 +152,10 @@ const SignUp = () => {
   return (
 
     <div className="grid lg:grid-cols-2 sm:grid-cols-2">
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+      />
       <div >
         <img src={signup} alt="img" />
       </div>

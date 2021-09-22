@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
 import { url } from '../common/constants';
 import SellerMenuBar from './SellerMenuBar';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddCategory = () => {
     const [categoryId, setCategoryId] = useState(0)
@@ -10,7 +10,6 @@ const AddCategory = () => {
     const [categoryDescription, setCategoryDescription] = useState('')
     const [categoryImage, setCategoryImage] = useState(undefined)
     const history = useHistory()
-
     const category = (() => {
         const body = new FormData();
 
@@ -22,7 +21,8 @@ const AddCategory = () => {
         axios.post(url + `/category`, body).then(response => {
             const result = response.data
             if (result) {
-                alert("success");
+                toast.success(`${result} addedd success`)
+
                 history.push("/sellerDashboard")
             }
 

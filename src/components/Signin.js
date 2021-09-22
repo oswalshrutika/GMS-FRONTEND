@@ -5,8 +5,10 @@ import axios from 'axios';
 import web1 from './gifs/couchgif.gif'
 import Navbar from '../components/NavBar';
 import { validEmail } from '../common/Regex'
-import {url} from '../common/constants'
-
+import { url } from '../common/constants'
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignIn = () => {
     const [email, setEmail] = useState('')
@@ -35,16 +37,31 @@ const SignIn = () => {
             const body = { email: email, password: password }
 
             axios.post(`${url}/user/authenticate`, body).then(response => {
+
+                // toast.info("Lorem ipsum dolor");
+
                 const result = response.data
+                console.log("🚀 ~ file: Signin.js ~ line 44 ~ axios.post ~ response.data", response.data)
+                console.log("🚀 ~ file: Signin.js ~ line 44 ~ axios.post ~ result", result)
+
+                sessionStorage.setItem("name", result.name)
+
                 saveTokenInLocalStorage(result)
                 sessionStorage.setItem("isLoggedin", true)
                 // history.push('/home')
+                toast.success('Welcome ')
+
                 window.location.href = '/home'
+
             })
 
         }
 
     })
+
+
+
+
 
     return (
 

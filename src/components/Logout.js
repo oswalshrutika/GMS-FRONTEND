@@ -2,15 +2,30 @@ import web3 from './gifs/seeyousson.gif'
 import SignIn from './Signin';
 import { useHistory, useLocation } from 'react-router-dom'
 import Navbar from './NavBar';
-
+import toast, { Toaster } from 'react-hot-toast';
+import { useState, useEffect } from 'react'
 
 const Logout = () => {
     const history = useHistory()
-   
+
+    useEffect(() => {
+
+
+
+        toast.success(`Logout Success`)
+
+
+
+    }, [])
     sessionStorage.clear()
 
     return (
         <div>
+
+            <Toaster
+                position="top-center"
+                reverseOrder={true}
+            />
             <div className="col-lg-7" >
                 <br />
                 <blockquote className="blockquote mb-0" style={{ paddingLeft: "100px" }}>

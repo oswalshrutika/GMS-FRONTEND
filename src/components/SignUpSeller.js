@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { emailurl, url } from '../common/constants';
 import { validCompanyEmail, validCompanyName, validcompanyPhone, validPassword } from '../common/Regex';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const SellerSignUp = () => {
@@ -35,19 +36,6 @@ const SellerSignUp = () => {
 
   const history = useHistory()
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   //console.log(email, password);
-  //   // clearing the values
-  //   // setEmail("");
-  //   // setPassword("");
-
-  //   console.log(this.email.value);
-
-  //   // clearing the values
-  //   this.email.value = "";
-
-  // };
 
 
 
@@ -62,53 +50,70 @@ const SellerSignUp = () => {
 
     if (companyName.length == 0) {
       setCompanyNameErr(true)
+      toast.error('fix error')
+
       setCompanyNameErrMsg("Enter Company Name")
     }
 
     else if (!validCompanyName.test(companyName)) {
       setCompanyNameErr(true)
+      toast.error('fix error')
+
       setCompanyNameErrMsg("Enter valid Company Name")
     }
 
     else if (companyEmail.length == 0) {
       setCompanyEmailErr(true)
+      toast.error('fix error')
+
       setCompanyEmailErrMsg("Enter Company Email")
     }
     else if (!validCompanyEmail.test(companyEmail)) {
       setCompanyEmailErr(true)
+      toast.error('fix error')
+
       setCompanyEmailErrMsg("Enter valid Company Email")
     }
     else if (password.length == 0) {
       setPasswordErr(true);
+      toast.error('fix error')
+
       setPasswordErrMsg("enter password")
     }
     else if (!validPassword.test(password)) {
       setPasswordErr(true);
+      toast.error('fix error')
+
       setPasswordErrMsg("Your password is not strong enough")
     }
     else if (companyPhone.length == 0) {
       setCompanyPhoneErr(true);
+      toast.error('fix error')
+
       setCompanyPhoneErrMsg("Enter phone number")
     }
     else if (!validcompanyPhone.test(companyPhone)) {
       setCompanyPhoneErr(true);
+      toast.error('fix error')
+
       setCompanyPhoneErrMsg("Enter valid phone number")
     }
 
     else if (companyAddress.length == 0) {
       setCompanyAddressErr(true)
+      toast.error('fix error')
+
       setCompanyAddressErrMsg("Enter Address")
     }
 
     else if (gstin.length == 0) {
       setGstinErr(true);
+      toast.error('fix error')
+
       setGstinErrMsg(" Enter GSTIN Number")
     }
 
-    // else if (!validGstin.test(gstin)) {
-    //   setGstinErr(true);
-    //   setGstinErrMsg(" Enter valid GSTIN Number")
-    // }
+
 
     else {
       const body = { sellerId: sellerId, companyName: companyName, companyEmail: companyEmail, password: password, companyPhone: companyPhone, companyAddress: companyAddress, gstin: gstin }
@@ -118,8 +123,9 @@ const SellerSignUp = () => {
       axios.post(url + `/seller/signup`, body).then(response => {
         const result = response.data;
         if (result) {
-          //alert('succcess')
           console.log(result)
+          toast.success('Sign Up Success Please Login to continue ')
+
           history.push('/sellerSignin')
         }
         else {
@@ -141,27 +147,26 @@ const SellerSignUp = () => {
     }
 
   })
-     axios.get(emailurl +`/send-email`).then(response =>{
-        const result=response.data;
-        if(result){
-          alert('succcess')
-          console.log(result)
-        }
-        else {
-          alert('error')
-        }
-      })
 
 
 
 
 
-    return (
+  return (
+
+    <div className="grid lg:grid-cols-2 sm:grid-cols-2">
+      <Toaster
+        position="top-center"
+        reverseOrder={true}
+      />
       <div>
-  
+        <h1>Register</h1>
+      </div>
+      <div className="border border-pink p-3">
+        <h4 className="text-pink"> Sign Up </h4>
         < form className="w-full max-w-lg" >
           <div className="flex flex-wrap -mx-3 mb-6">
-          <input
+            <input
               onChange={(e) => {
                 setSellerId(e.target.value)
               }}
@@ -172,23 +177,23 @@ const SellerSignUp = () => {
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                 Company Name
               </label>
-          
+
               <input
-              onChange={(e) => {
-                setCompanyName(e.target.value)
-              }}className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
+                onChange={(e) => {
+                  setCompanyName(e.target.value)
+                }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" />
               {companyNameErr && <p className="text-red-500 text-xs italic">{companyNameErrMsg}</p>}
             </div>
-  
-  
+
+
             <div className="w-full md:w-1/2 px-3">
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="email">
-               Company Email
+                Company Email
               </label>
               <input
-              onChange={(e) => {
-                setCompanyEmail(e.target.value)
-              }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="google@gmail.com" />
+                onChange={(e) => {
+                  setCompanyEmail(e.target.value)
+                }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="google@gmail.com" />
               {companyEmailErr && <p className="text-red-500 text-xs italic">{companyEmailErrMsg}</p>}
             </div>
           </div>
@@ -202,7 +207,6 @@ const SellerSignUp = () => {
               <input onChange={(e) => {
                 setPassword(e.target.value)
               }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************" />
-              <p className="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
               {passwordErr && <p className="ext-red-500 text-xs italic">{passwordErrMsg}</p>}
             </div>
           </div>
@@ -211,61 +215,54 @@ const SellerSignUp = () => {
           <div className="flex flex-wrap -mx-3 mb-2">
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-               Company Phone
+                Company Phone
               </label>
               <input
-              onChange={(e) => {
-                setCompanyPhone(e.target.value)
-              }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="+910000000" />
+                onChange={(e) => {
+                  setCompanyPhone(e.target.value)
+                }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="+91" />
               {companyPhoneErr && <p className="text-danger text-xs italic">{companyPhoneErrMsg}</p>}
             </div>
 
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-               company Address
+                company Address
               </label>
               <input onChange={(e) => {
-               setCompanyAddress(e.target.value)
+                setCompanyAddress(e.target.value)
               }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="eg: Pune" />
               {companyAddressErr && <p className="text-danger text-xs italic">{companyAddressErrMsg}</p>}
-              
+
             </div>
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
                 GSTIN
               </label>
               <input onChange={(e) => {
-               setGstin(e.target.value)
+                setGstin(e.target.value)
               }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="number" placeholder="415501" />
               {gstinErr && <p className="text-danger text-xs italic">{gstinErrMsg}</p>}
             </div>
-  
-            {/* <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                Role
-              </label>
-              <div class="relative">
-                <select onChange={(e) => {
-                  setRole(e.target.value)
-                }} class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                  <option value="CUSTOMER">CUSTOMER</option>
-                  <option value="SELLER">SELLER</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                </div>
-              </div>
-              {roleErr && <p classNameName="text-danger">{roleErrMsg}</p>}
-            </div> */}
+
           </div>
         </form>
-  
-        
-        <button onClick={sellerSignUp} className="btn btn-success">Signup</button>
-      </div >
-  
-    )
-  }
+
+
+        <button onClick={sellerSignUp} className="btn bg-pink text-white mt-3">Register as Seller</button>
+
+        <p className="text-xs text-gray-500 mt-3">
+          Already have an  account  ? <Link to="/signin-signup" className="text-pink">Sign In here</Link>
+        </p>
+
+        <p className="text-xs text-gray-500 mt-3">
+          If you want Register as Custmor <Link to="/signup" className="text-pink">Signup here</Link>
+        </p>
+      </div>
+    </div>
+
+
+  )
+}
 
 
 export default SellerSignUp
@@ -502,7 +499,7 @@ export default SellerSignUp
   //           <br />
   //           <button onClick={sellerSignUp} className="btn btn-success">Signup</button>
 
-           
+
   //         </div>
   //         <div className="col-lg-7" >
   //           <img src={web1} alt="web" style={{ paddingLeft: "200px" }} />
