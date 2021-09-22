@@ -54,7 +54,7 @@ const Category = () => {
   }
   return (
     <div>
-
+      <a href="/home" className="text-indigo-600 font-medium hover:text-indigo-500 p-3">Back To Home <span aria-hidden="true"> &rarr;</span></a>
 
       < div className="bg-white" >
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
