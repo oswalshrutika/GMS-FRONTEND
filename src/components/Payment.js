@@ -3,6 +3,8 @@ import Navbar from './NavBar';
 const Payment = () => {
     const amount = JSON.parse(sessionStorage.getItem('payment'))
     console.log(amount)
+
+   
     return (
         <div>
 
@@ -28,7 +30,7 @@ const Payment = () => {
                                     href="/delivery"
                                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-pink hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                                 >
-                                    Check Delivery status
+                                    Confirm Payment
                                 </a>
                             </div>
 

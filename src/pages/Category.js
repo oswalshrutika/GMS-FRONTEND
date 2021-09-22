@@ -9,6 +9,7 @@ import { removeFromCartAction } from '../actions/cartActions'
 import Navbar from '../components/NavBar'
 import Footer from '../components/Footer'
 
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Category = () => {
@@ -37,11 +38,15 @@ const Category = () => {
 
   const addToCart = (product) => {
     dispatch(addToCartAction(product))
+    toast.success(`${product.productName} added to cart `)
+
     setCount(count + 1)
   }
 
   const removeFromCart = (product) => {
     dispatch(removeFromCartAction(product))
+    toast.error(`${product.productName} removed from cart `)
+
   }
 
   const productCounter = () => {
@@ -93,7 +98,7 @@ const Category = () => {
                     className="btn btn-outline-success"
                     onClick={() => {
                       addToCart(product)
-                       
+
                     }}>
                     +
                   </button>}
@@ -218,7 +223,7 @@ export default Category
 //     const cat = location.state.cat;
 
 //     const getCategory = () => {
-//         axios.post(url + `/category/${cat.categoryName}`).then((response) => {
+//         axios.post(url + `/ category / ${ cat.categoryName }`).then((response) => {
 //             const result = response.data
 //             setCategory(result)
 //         })

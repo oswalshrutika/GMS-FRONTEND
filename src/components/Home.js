@@ -2,9 +2,21 @@ import CategoryList from "./Categorylist";
 import Search from "./Search";
 import { Link } from "react-router-dom"
 import Footer from "../components/Footer"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState, useEffect } from 'react'
 
 function Home() {
+
+  useEffect(() => {
+
+
+    
+      toast.success(`Welcome `)
+
+    
+
+  }, [])
   return (
     <div className="App">
       <div className="">

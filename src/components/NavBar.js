@@ -6,6 +6,8 @@ import { BellIcon, MenuIcon, XIcon, ShoppingBagIcon, BiAddToQueue } from '@heroi
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Logout from './Logout';
+import toast, { Toaster } from 'react-hot-toast';
+
 const navigation = [
   { name: 'Home', to: 'home', current: false },
   { name: 'Category', to: 'categorylist', current: false },
@@ -19,6 +21,8 @@ function classNames(...classes) {
 
 const Navbar = (props) => {
   const onLogout = () => {
+    toast.success('Logout Successfully  ')
+
     Logout()
   }
   const dispatch = useDispatch()
