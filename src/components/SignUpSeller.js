@@ -119,9 +119,9 @@ const SellerSignUp = () => {
       axios.post(url + `/seller/signup`, body).then(response => {
         const result = response.data;
         if (result) {
-          alert('succcess')
+          //alert('succcess')
           console.log(result)
-          //history.push('/sellerSignin')
+          history.push('/sellerSignin')
         }
         else {
           alert('error')
