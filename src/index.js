@@ -5,10 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './stores'
+// import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify'
+
+import toast, { Toaster } from 'react-hot-toast';
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
+    {/* <ToastContainer /> */}
+    <Toaster />
+
   </Provider>,
   document.getElementById('root')
 )

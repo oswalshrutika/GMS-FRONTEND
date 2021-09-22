@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import SellerMenuBar from './SellerMenuBar'
 // const url = 'http://localhost:8080'
-import {url} from '../common/constants'
+import { url } from '../common/constants'
 const SellerEditProfile = () => {
 
 
@@ -60,28 +60,28 @@ const SellerEditProfile = () => {
 
           <div>
             <label htmlFor="">Company Name   </label>
-            <input type="text" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" id="exampleInputPassword1" onChange={(e) => {
+            <input type="text" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" id="exampleInputPassword1" onChange={(e) => {
               setCompanyName(e.target.value)
             }} defaultValue={seller.companyName} /><br />
 
           </div>
           <div>
             <label htmlFor="">Company Phone  </label>
-            <input type="text" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
+            <input type="text" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
               setCompanyPhone(e.target.value)
             }} defaultValue={seller.companyPhone} /><br />
 
           </div>
           <div>
             <label htmlFor="">Comapany Address  </label>
-            <input type="text" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
+            <input type="text" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
               setCompanyAddress(e.target.value)
             }} defaultValue={seller.companyAddress} /><br />
 
           </div>
           <div>
             <label htmlFor="">GSTIN  </label>
-            <input type="text" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
+            <input type="text" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
               setGstin(e.target.value)
             }} defaultValue={seller.gstin} /><br />
 
@@ -90,22 +90,22 @@ const SellerEditProfile = () => {
         </div>
 
 
-        <button type="submit" class="btn btn-primary" onClick={() => { EditProfile(seller.sellerId) }}>Submit</button>
+        <button type="submit" className="btn btn-primary" onClick={() => { EditProfile(seller.sellerId) }}>Submit</button>
 
-        <input type="hidden" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
+        <input type="hidden" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
           setSellerId(e.target.value)
         }} defaultValue={seller.sellerId} /><br />
 
-        <input type="hidden" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
+        <input type="hidden" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
           setCompanyEmail(e.target.value)
         }} defaultValue={seller.companyEmail} /><br />
 
 
-        <input type="hidden" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
+        <input type="hidden" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
           setPassword(e.target.value)
         }} defaultValue={seller.password} /><br />
 
-        <input type="hidden" class="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
+        <input type="hidden" className="appearance-none block w-full bg-white-100 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-pink-50" onChange={(e) => {
           setRole(e.target.value)
         }} defaultValue={seller.role} /><br />
 

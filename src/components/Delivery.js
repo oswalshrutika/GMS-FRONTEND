@@ -1,5 +1,8 @@
 // import qrcode from '../images/qrcode.jpeg'
 import Navbar from './NavBar';
+import { useState, useEffect } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Delivery = () => {
 
@@ -8,11 +11,16 @@ const Delivery = () => {
     tomorrow.setDate(today.getDate() + 7)
     const t2 = tomorrow.toDateString()
 
-
+    useEffect(() => {
+        toast.success(`Order Placed succesfully`)
+    }, [])
 
     return (
         <div>
-
+            <Toaster
+                position="top-center"
+                reverseOrder={true}
+            />
 
             <div className="float-center m-5">
                 <h1 className="lg:text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
