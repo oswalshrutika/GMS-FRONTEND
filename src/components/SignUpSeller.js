@@ -159,10 +159,15 @@ const SellerSignUp = () => {
         position="top-center"
         reverseOrder={true}
       />
-      <div>
-        <h1>Register</h1>
+      <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
+        <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+          <h1 className="title-font font-medium text-3xl text-pink">Welcome to the  GroceryManegement </h1>
+          <p className="leading-relaxed mt-4">India's most convenient online grocery channel
+            We offer you convenience of shopping everything that you need for your home - be it fresh fruits & vegetables, rice, dals, oil, packaged food, dairy item, frozen, pet food, household cleaning items & personal care products from a single virtual store. .
+          </p>
+        </div>
       </div>
-      <div className="border border-pink p-3">
+      <div className="border border-pink p-3 bg-gray-100">
         <h4 className="text-pink"> Sign Up </h4>
         < form className="w-full max-w-lg" >
           <div className="flex flex-wrap -mx-3 mb-6">
