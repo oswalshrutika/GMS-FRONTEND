@@ -5,6 +5,7 @@ import axios from 'axios';
 import web1 from './gifs/couchgif.gif'
 import Navbar from '../components/NavBar';
 import { validEmail } from '../common/Regex'
+import {url} from '../common/constants'
 
 
 const SignIn = () => {
@@ -33,7 +34,7 @@ const SignIn = () => {
         else {
             const body = { email: email, password: password }
 
-            axios.post(`http://localhost:8080/user/authenticate`, body).then(response => {
+            axios.post(`${url}/user/authenticate`, body).then(response => {
                 const result = response.data
                 saveTokenInLocalStorage(result)
                 sessionStorage.setItem("isLoggedin", true)

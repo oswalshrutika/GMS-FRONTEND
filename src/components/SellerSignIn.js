@@ -2,6 +2,8 @@ import { Link, useHistory } from 'react-router-dom'
 import { useState } from "react"
 import axios from 'axios';
 import web1 from './gifs/couchgif.gif'
+
+import{url} from '../common/constants';
 const SellerSignIn = () => {
     const [companyEmail, setCompanyEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -22,7 +24,9 @@ const SellerSignIn = () => {
         else {
             const body = { companyEmail: companyEmail, password: password }
 
-            axios.post(`http://localhost:8080/seller/sellerAuthenticate`, body).then(response => {
+            axios.post(`${url}/seller/sellerAuthenticate`, body).then(response => {
+                console.log(url)
+
                 const result = response.data
                 console.log(result)
                 if (result.companyEmail != 'admin@gmail.com') {

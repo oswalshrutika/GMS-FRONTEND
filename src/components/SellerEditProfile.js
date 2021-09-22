@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import SellerMenuBar from './SellerMenuBar'
-const url = 'http://localhost:8080'
+// const url = 'http://localhost:8080'
+import {url} from '../common/constants'
 const SellerEditProfile = () => {
 
 
@@ -28,7 +29,7 @@ const SellerEditProfile = () => {
 
 
 
-    axios.put(`http://localhost:8080/seller/edit-profile/`, body).then((response) => {
+    axios.put(`${url}/seller/edit-profile/`, body).then((response) => {
       const result = response.data
 
       if (result) {
