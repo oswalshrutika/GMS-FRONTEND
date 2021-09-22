@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { useHistory } from 'react-router-dom'
-import { url } from '../common/constants';
 import axios from 'axios';
-import SellerNavbar from './SellerNavbar';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { url } from '../common/constants';
 import SellerMenuBar from './SellerMenuBar';
 
 const AddCategory = () => {

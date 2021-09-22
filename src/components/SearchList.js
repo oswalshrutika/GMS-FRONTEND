@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Card from '../Card';
-import Carousel1 from '../Carousel1';
 import { url } from '../common/constants';
 
 function SearchList({ filteredcategory }) {

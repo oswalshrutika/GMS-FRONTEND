@@ -1,9 +1,8 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCartAction } from '../actions/cartActions'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
 import { url } from '../common/constants'
-import SellerMenuBar from '../components/SellerMenuBar'
 const Products = () => {
   const [products, setProducts] = useState([])
 

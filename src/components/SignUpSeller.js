@@ -141,16 +141,16 @@ const SellerSignUp = () => {
     }
 
   })
-    //  axios.get(emailurl +`/send-email`).then(response =>{
-    //     const result=response.data;
-    //     if(result){
-    //       alert('succcess')
-    //       console.log(result)
-    //     }
-    //     else {
-    //       alert('error')
-    //     }
-    //   })
+     axios.get(emailurl +`/send-email`).then(response =>{
+        const result=response.data;
+        if(result){
+          alert('succcess')
+          console.log(result)
+        }
+        else {
+          alert('error')
+        }
+      })
 
 
 
