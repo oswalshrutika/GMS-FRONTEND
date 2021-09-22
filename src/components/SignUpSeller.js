@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { emailurl, url } from '../common/constants';
 import axios from 'axios';
-import { useHistory, useLocation } from 'react-router-dom'
-import web1 from './gifs/basket.gif'
-import { validCompanyEmail, validCompanyName, validcompanyPhone, validGstin, validPassword } from '../common/Regex';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { emailurl, url } from '../common/constants';
+import { validCompanyEmail, validCompanyName, validcompanyPhone, validPassword } from '../common/Regex';
 
 
 const SellerSignUp = () => {

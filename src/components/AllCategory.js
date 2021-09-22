@@ -1,10 +1,7 @@
 import axios from 'axios'
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { url } from '../common/constants'
-import { useHistory, useLocation } from 'react-router-dom'
 import SellerMenuBar from './SellerMenuBar'
-import SellerNavbar from './SellerNavbar'
 
 
 const AllCategory = () => {

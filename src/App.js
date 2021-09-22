@@ -1,6 +1,5 @@
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import './App.css';
-import Browse from './components/Browse';
 import Signin from './components/Signin';
 import Cart from './components/Cart';
 
@@ -46,7 +45,7 @@ function App() {
           <Switch>
             {/* <Route path="/home" component={Home}></Route> */}
 
-            <Route path="/browse" component={Browse}></Route>
+            {/* <Route path="/browse" component={Browse}></Route> */}
             <Route path="/signin-signup" component={Signin}></Route>
             <Route path="/cart" component={Cart}></Route>
             <Route path="/signup" component={SignUp}></Route>

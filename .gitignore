@@ -3,3 +3,8 @@ node_modules
 package-lock.json
 
 .vscode
+
+.env
+.env.development
+.env.test.local
+.env.production.local

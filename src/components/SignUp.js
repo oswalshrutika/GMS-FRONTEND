@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import { url } from '../common/constants';
 import axios from 'axios';
-import { useHistory, useLocation, Link } from 'react-router-dom'
-import web1 from './gifs/basket2.gif'
-import Navbar from '../components/NavBar';
-import { validEmail, validPassword, validPhone, validPincode } from '../common/Regex'
-import { signup } from "../assets/signup.png"
+import { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { url } from '../common/constants';
+import { validEmail, validPassword, validPhone, validPincode } from '../common/Regex';
 
 
 const SignUp = () => {
