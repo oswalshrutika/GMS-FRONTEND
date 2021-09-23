@@ -45,7 +45,7 @@ function SearchList({ filteredcategory }) {
                                     <div className="content float-left ">
                                         <p className="content float-left text-gray-400"> {cat.categoryDescription}</p>
 
-                                        <h3 className="text-gray-700">{cat.categoryName}</h3>
+                                        {/* <h3 className="text-gray-700">{cat.categoryName}</h3> */}
                                     </div>
                                 </div>
                             </div>
