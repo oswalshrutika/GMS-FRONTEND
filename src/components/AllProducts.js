@@ -1,11 +1,8 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { url } from '../common/constants'
-import { useHistory, useLocation } from 'react-router-dom'
 import SellerMenuBar from './SellerMenuBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SellerNavbar from './SellerNavbar'
 
 
 
@@ -83,9 +80,6 @@ const AllProducts = () => {
 
                                     cat.productItem.map((product) => {
                                         return (
-
-
-
 
                                             product.supplierId == seller.sellerId && (
                                                 <tr key={product.productId}>

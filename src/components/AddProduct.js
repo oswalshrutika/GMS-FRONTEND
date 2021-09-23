@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import { url } from '../common/constants';
 import axios from 'axios';
-import SellerNavbar from './SellerNavbar';
 import SellerMenuBar from './SellerMenuBar';
 
 const Product = () => {
@@ -57,7 +56,7 @@ const Product = () => {
             if (result) {
                 alert('succcess')
                 // sessionStorage.setItem("seller", JSON.stringify({sellerId : result.sellerId}))
-                // history.push("/sellerDashboard")
+                 history.push("/sellerDashboard")
 
                 console.log(result.category)
                 console.log(result.seller)

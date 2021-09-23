@@ -6,7 +6,6 @@ import toast, { Toaster } from 'react-hot-toast';
 import axios from  'axios';
 
 
-///
 const AddCategory = () => {
     const [categoryId, setCategoryId] = useState(0)
     const [categoryName, setCategoryName] = useState('')
