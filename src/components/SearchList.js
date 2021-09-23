@@ -39,7 +39,7 @@ function SearchList({ filteredcategory }) {
                             <div >
 
                                 <div className="single-service wow fadeInUp " data-wow-delay=".2s">
-                                    <div className="icon w-20">
+                                    <div className="icon w-50">
                                         <img src={url + '/' + cat.categoryImage} alt="" />
                                     </div>
                                     <div className="content float-left ">
@@ -55,7 +55,7 @@ function SearchList({ filteredcategory }) {
 
                     )
 
-                }) : <h1 className="text-purple-700">Ummmmmm.....? 🙂 No category found</h1>
+                }) : <h1 className="text-purple-700">Ummmm.....? 🙂 No category found</h1>
             }
 
 
