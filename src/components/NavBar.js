@@ -72,7 +72,10 @@ const Navbar = (props) => {
                   <img
                     className="hidden lg:block h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
+                     //src="C:/Users/Shrutika Oswal/Desktop/GSMProject/GMS-FRONTEND/public/assets/img/about/keyrana.png"
+                   
+                    // src="https://drive.google.com/file/d/1d6ajGZQObLZRYi5HQeDEYkuyxR6YasO7/view?usp=sharing"
+                    alt="keyrana"
                   />
                 </div>
                 <div className="hidden sm:block sm:ml-6">

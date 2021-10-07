@@ -50,9 +50,10 @@ function Home() {
               <div className="hero-content">
                 <h1 className="wow fadeInUp" data-wow-delay=".2s">Home Delivery <span>From Stores Near You</span> </h1>
                 <p className="wow fadeInUp" data-wow-delay=".4s">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                  {/* Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. */}
+                  Did you ever imagine that the freshest of fruits and vegetables, top quality pulses and food grains, dairy products and hundreds of branded items could be handpicked and delivered to your home, all at the click of a button? India’s first comprehensive online megastore
                 </p>
-                <a href="javascript:void(0)" className="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Download App</a>
+                {/* <a href="javascript:void(0)" className="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Download App</a> */}
               </div>
             </div>
             <div className="col-lg-6">
@@ -93,7 +94,10 @@ function Home() {
                 <div className="section-title">
                   <span className="wow fadeInUp" data-wow-delay=".2s">About Us</span>
                   <h1 className="wow fadeInUp" data-wow-delay=".4s">On-time Delivery and Customer Satisfaction</h1>
-                  <p className="wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                  <p className="wow fadeInUp" data-wow-delay=".6s">
+                    {/* Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. */}
+                    Pick the most convenient delivery slot to have your grocery delivered. From early morning delivery for early birds, to late-night delivery for people who work the late shift, bigbasket caters to every schedule.
+                    </p>
                 </div>
                 <div className="rating-meta d-flex align-items-center wow fadeInUp" data-wow-delay=".65s">
                   <h5>Rating 4.8</h5>
@@ -134,7 +138,10 @@ function Home() {
                 <div className="section-title">
                   <span className="wow fadeInUp" data-wow-delay=".2s">Fast Delivery</span>
                   <h1 className="mb-35 wow fadeInUp" data-wow-delay=".4s">Order Now, Recieve Within 30mins</h1>
-                  <p className="mb-35 wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore hdht dolore magna aliquyam erat, sed diam voluptua.</p>
+                  <p className="mb-35 wow fadeInUp" data-wow-delay=".6s">
+                    {/* Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore hdht dolore magna aliquyam erat, sed diam voluptua. */}
+                    This super useful service can be availed by customers in cities like Bangalore, Mumbai, Pune, Chennai, Kolkata, Hyderabad and Delhi-NCR in which we deliver your orders to your doorstep in 90 Minutes.
+                    </p>
                   <a href="javscript:void(0)" className="main-btn btn-hover wow fadeInUp" data-wow-delay=".8s">Download App</a>
                 </div>
               </div>

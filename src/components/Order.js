@@ -1,19 +1,15 @@
 
 
 import { Button } from '@progress/kendo-react-buttons';//pdf
-import { PDFExport, savePDF } from '@progress/kendo-react-pdf';//pdf
+import { PDFExport } from '@progress/kendo-react-pdf';//pdf
 
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromCartAction } from '../actions/cartActions'
 import { url } from '../common/constants'
-import Navbar from '../components/NavBar';
-import { addToCartAction } from '../actions/cartActions'
-import { clearCartAction } from '../actions/cartActions'
 import { useState, useEffect } from 'react'
 // import { useCart } from "react-use-cart";
-import { CartProvider, useCart } from "react-use-cart";
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useRef } from 'react';
+import {paymentROZARPAY} from '../common/constants'
 
 
 
@@ -38,6 +34,9 @@ const Order = () => {
   const payment = () => {
     sessionStorage.setItem("payment", JSON.stringify({ cartTotal }))
     history.push('/payment')
+    //history.push(`${paymentROZARPAY}`);
+    //window.location =paymentROZARPAY
+
   }
 
 
