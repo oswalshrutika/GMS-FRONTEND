@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import {useHistory,useLocation } from 'react-router-dom'
 import axios from 'axios'
-const url = 'http://localhost:8080'
+// const url = 'http://localhost:8080'
+import { url } from '../common/constants'
 //{{URL}}/user/update/5
 //{{URL}}/admin/customers
 //admin/customers/1
@@ -32,7 +33,7 @@ const EditProfile=()=>{
     //   }
       const getAllfromdb=()=>{
         const body = {id: id }
-        axios.post(`http://localhost:8080/admin/customerbyId`,body).then((response)=>{
+        axios.post(`${url}/customerbyId`,body).then((response)=>{
           const result=response.data
           console.log(result)
           if(result){

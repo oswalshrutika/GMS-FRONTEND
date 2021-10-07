@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import {  useHistory } from 'react-router-dom'
 import Navbar from '../components/NavBar';
+import { url } from '../common/constants'
 const ContactUs = () => {
 const [userName, setUserName] = useState('')
 const [userEmail, setUserEmail] = useState('')
@@ -22,7 +23,7 @@ const history = useHistory()
                 userEmail: userEmail,
             userMessage: userMessage}
 
-            axios.post( `http://localhost:8080/contactUs/add`, body).then(response => {
+            axios.post( `${url}/contactUs/add`, body).then(response => {
                 const result = response.data
                 if (result.status==='success') {
                     alert(' successfully send Message')

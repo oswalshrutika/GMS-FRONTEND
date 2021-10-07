@@ -2,7 +2,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useHistory, useLocation } from 'react-router-dom'
 import SellerMenuBar from './SellerMenuBar'
-const url = 'http://localhost:8080'
+// const url = 'http://localhost:8080'
+import { url } from '../common/constants'
 
 
 const ChangeSellerPassword = () => {
@@ -18,7 +19,7 @@ const ChangeSellerPassword = () => {
   // const location = useLocation()
   // const user = location.state.user
   const ChangePassword = (sellerId) => {
-    axios.put(`http://localhost:8080/seller/update/${sellerId}`, { 'password': password }).then((response) => {
+    axios.put(`${url}/${sellerId}`, { 'password': password }).then((response) => {
       alert("success")
       history.push('/home')
     })

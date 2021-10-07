@@ -1,7 +1,8 @@
 import {useState} from 'react'
 import axios from 'axios'
 import {useHistory,useLocation } from 'react-router-dom'
-const url = 'http://localhost:8080'
+// const url = 'http://localhost:8080'
+import { url } from '../common/constants'
 
 //{{URL}}/user/update/5
 //{{URL}}/admin/customers
